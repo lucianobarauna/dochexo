@@ -1,12 +1,13 @@
 title: API
 ---
-This documentation provides more detailed information about the API and will be particularly helpful for people who want to modify the Hexo source code or write new plugins. If you are interested in more basic usage of Hexo, please refer to the [docs](../docs) instead.
+Essa documentação fornece informações mais detalhadas sobre a API e será útil para pessoas que desejam modificar o código-fonte do Hexo ou escrever novos plugins. Se você está interessado em um uso mais basico do Hexo, consulte as [documentações](../docs).
 
-Please note that this documentation is only valid for Hexo 3 and above.
+Por favir, note que essa documentação é válida apenas para o Hexo 3 ou superior.
 
+## Iniciando
 ## Initialize
 
-First, we have to create a Hexo instance. A new instance takes two arguments: the root directory of the website, `base_dir`, and an object containing the initialization options. Next, we initialize this instance by calling the `init` method on it, which will then cause Hexo to load its configuration and plugins.
+Primeiro, temos que criar uma instancia Hexo. Uma nova instancia recebe dois argumentos: o diretório raiz do site, `base_dir`, e um objeto com a opções de inicialização. Em seguida, inicializamos essa instância chamando o método `init`, que irá carregar as configurações e plugins do Hexo.
 
 ``` js
 var Hexo = require('hexo');
@@ -17,12 +18,12 @@ hexo.init().then(function(){
 });
 ```
 
-Option | Description | Default
+Opção | Descrição | Padrão
 --- | --- | ---
-`debug` | Enable debug mode. Display debug messages in the terminal and save `debug.log` in the root directory. | `false`
-`safe` | Enable safe mode. Don't load any plugins. | `false`
-`silent` | Enable silent mode. Don't display any messages in the terminal. | `false`
-`config` | Specify the path of the configuration file. | `_config.yml`
+`debug` | Habilita o modo debug. Mostra as messagens de debug no terminal e cria o arquivo `debug.log` no diretório raiz. | `false`
+`safe` | Habilita o modo seguro. Não carrega nenhum plugin. | `false`
+`silent` | Habilita o modo silencioso. Não mostra nenhuma mensagem no terminal. | `false`
+`config` | Especifique o caminho do arquivo de configuração. | `_config.yml`
 
 ## Load Files
 

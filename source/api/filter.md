@@ -1,6 +1,7 @@
-title: Filter
+title: Filtro
 ---
-A filter is used to modify some specified data. Hexo passes data to filters in sequence and the filters then modify the data one after the other. This concept was borrowed from [WordPress](http://codex.wordpress.org/Plugin_API#Filters).
+Um filtro pode ser utilizado para modificar alguns dados. Hexo passa dados para filtros em sequência e os filtros, então, modificam esses dados um após o outro. Este é o mesmo conceito utilizado pelo [WordPress](http://codex.wordpress.org/Plugin_API#Filters).
+
 
 ## Synopsis
 
@@ -10,21 +11,21 @@ hexo.extend.filter.register(type, function(){
 }, priority);
 ```
 
-You can define the `priority`. Lower `priority` means that it will be executed first. The default `priority` is 10.
+Você pode definir uma prioridade específica para cada filtro (parâmetro `priority` no exemplo acima). Uma prioridade mais baixa significa que o filtro será executado primeiro. A prioridade padrão é 10. 
 
-## Execute Filters
+## Executar Filtros
 
 ``` js
 hexo.extend.filter.exec(type, data, options);
 hexo.extend.filter.execSync(type, data, options);
 ```
 
-Option | Description
+Opção | Descrição
 --- | ---
-`context` | Context
-`args` | Arguments. This must be an array.
+`context` | Contexto
+`args` | Argumentos. Deve ser um array.
 
-The first argument passed into each filter is `data`. The `data` passed into the next filter can be modified by returning a new value. If nothing is returned, the data remains unmodified. You can even use `args` to specify other arguments in filters. For example:
+O primeiro argumento passado para cada filtro é `data`. O próximo filtro da sequência pode receber o argumento `data` modificado ao se retornar um novo valor. Se nada for retornado, `data` continua intacto. Você ainda pode utilizar `args` para especificar outros argumentos dentro dos filtros. Por exemplo:
 
 ``` js
 hexo.extend.filter.register('test', function(data, arg1, arg2){
@@ -44,28 +45,28 @@ hexo.extend.filter.exec('test', 'some data', {
 });
 ```
 
-You can also use the following methods to execute filters:
+Você também pode utilizar os seguintes métodos para executar filtros:
 
 ``` js
 hexo.execFilter(type, data, options);
 hexo.execFilterSync(type, data, options);
 ```
 
-## Unregister Filters
+## Remover Filtros
 
 ``` js
 hexo.extend.filter.unregister(type, filter);
 ```
 
-## Filter List
+## Lista de Filtros
 
-Here is a list of filters used by Hexo.
+Abaixo são listados os filtros utilizados pelo Hexo.
 
 ### before_post_render
 
-Executed before a post is rendered. Refer to [post rendering](posts.html#Render) to learn the execution steps.
+Executado antes de um post ser renderizado. Verificar a seção [post_rendering](posts.html#Render) para saber mais sobre as etapas de execução. 
 
-For example, to transform the title to lower case:
+Por exemplo, para se transformar um título em _caixa baixa_:
 
 ``` js
 hexo.extend.filter.register('before_post_render', function(data){
@@ -76,9 +77,9 @@ hexo.extend.filter.register('before_post_render', function(data){
 
 ### after_post_render
 
-Executed after a post is rendered. Refer to [post rendering](posts.html#Render) to learn the execution steps.
+Executado após o post ser renderizado. Verificar a seção [post rendering](posts.html#Render) para saber mais sobre as etapas de execução.  
 
-For example, to replace `@username` with a link to a Twitter profile:
+Por exemplo, para substituir `@username` por um link para o perfil do Twitter:
 
 ``` js
 hexo.extend.filter.register('after_post_render', function(data){
@@ -89,7 +90,7 @@ hexo.extend.filter.register('after_post_render', function(data){
 
 ### before_exit
 
-Executed before Hexo is about to exit -- this will run right after `hexo.exit` is called.
+Executado quando o Hexo está prestes a ser terminado -- isso será executado logo após `hexo.exit` ser chamado.
 
 ``` js
 hexo.extend.filter.register('before_exit', function(){
@@ -99,7 +100,7 @@ hexo.extend.filter.register('before_exit', function(){
 
 ### before_generate
 
-Executed before generation begins.
+Executado antes do processo de geração começar.
 
 ``` js
 hexo.extend.filter.register('before_generate', function(){
@@ -109,7 +110,7 @@ hexo.extend.filter.register('before_generate', function(){
 
 ### after_generate
 
-Executed after generation finishes.
+Executado após que processo de geração termina.
 
 ``` js
 hexo.extend.filter.register('after_generate', function(){
@@ -119,9 +120,9 @@ hexo.extend.filter.register('after_generate', function(){
 
 ### template_locals
 
-Modify [local variables](../docs/variables.html) in templates.
+Modifica [local variables](../docs/variables.html) nos templates.
 
-For example, to add the current time to the local variables of templates:
+Por exemplo, para adicionar o tempo local à variável local dos templates:
 
 ``` js
 hexo.extend.filter.register('template_locals', function(locals){
@@ -132,7 +133,7 @@ hexo.extend.filter.register('template_locals', function(locals){
 
 ### after_init
 
-Executed after Hexo is initialized -- this will run right after `hexo.init` completes.
+Executado após a inicialização do Hexo -- este será executado logo após `hexo.init` ser concluído.
 
 ``` js
 hexo.extend.filter.register('after_init', function(){
@@ -142,7 +143,7 @@ hexo.extend.filter.register('after_init', function(){
 
 ### new_post_path
 
-Executed when creating a post to determine the path of new posts.
+Executado ao criar um post para determinar o caminho dos novos posts.
 
 ``` js
 hexo.extend.filter.register('new_post_path', function(data, replace){
@@ -152,7 +153,7 @@ hexo.extend.filter.register('new_post_path', function(data, replace){
 
 ### post_permalink
 
-Used to determine the permalink of posts.
+Usado para determinar os permalinks dos posts.
 
 ``` js
 hexo.extend.filter.register('post_permalink', function(data){
@@ -162,13 +163,13 @@ hexo.extend.filter.register('post_permalink', function(data){
 
 ### after_render
 
-Executed after rendering finishes. You can see [rendering](rendering.html#after_render_Filters) for more info.
+Executado após a renderização ser terminada. Mais informações podem ser encontradas em [rendering](rendering.html#after_render_Filters).
 
 ### server_middleware
 
-Add middleware to the server. `app` is a [Connect] instance.
+Adiciona um middleware ao servidor. `app` é uma instância da [Connect].
 
-For example, to add `X-Powered-By: Hexo` to the response header:
+Por exemplo, para adicionar `X-Powered-By: Hexo` ao cabeçalho de resposta: 
 
 ``` js
 hexo.extend.filter.register('server_middleware', function(app){

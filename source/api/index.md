@@ -5,7 +5,6 @@ Essa documentação fornece informações mais detalhadas sobre a API e será ú
 Por favir, note que essa documentação é válida apenas para o Hexo 3 ou superior.
 
 ## Iniciando
-## Initialize
 
 Primeiro, temos que criar uma instancia Hexo. Uma nova instancia recebe dois argumentos: o diretório raiz do site, `base_dir`, e um objeto com a opções de inicialização. Em seguida, inicializamos essa instância chamando o método `init`, que irá carregar as configurações e plugins do Hexo.
 
@@ -25,11 +24,10 @@ Opção | Descrição | Padrão
 `silent` | Habilita o modo silencioso. Não mostra nenhuma mensagem no terminal. | `false`
 `config` | Especifique o caminho do arquivo de configuração. | `_config.yml`
 
-## Load Files
+## Carregar Arquivos
+Hexo fornece dois métodos para carregar arquivos: `load` e `watch`. O método `load` é usado para carregador todos os arquivos da pasta `source` como também os dados do tema. O método `watch` faz a mesma coisa que o `load`, como também observará mudanças nos arquivos continuamente.
 
-Hexo provides two methods for loading files: `load` and `watch`. `load` is used for loading all files in the `source` folder as well as the theme data. `watch` does the same things `load` does, but will also start watching for file changes continuously.
-
-Both methods will load the list of files and pass them to the corresponding processors. After all files have been processed, they will call upon the generators to create the routes.
+Ambos os métodos irão carregar a lista de arquivos e passar para os processadores correspondentes. Depois de todos os arquivos terem sido processados, eles irão chamar os geradores para criar as rotas.
 
 ``` js
 hexo.load().then(function(){
@@ -37,13 +35,12 @@ hexo.load().then(function(){
 });
 
 hexo.watch().then(function(){
-  // You can call hexo.unwatch() later to stop watching.
+  // Você pode chamar hexo.unwatch() depois para parar de observar.
 });
 ```
+## Comandos de Execução
 
-## Execute Commands
-
-Any console command can be called explicitly using the `call` method on the Hexo instance. Such a call takes two arguments: the name of the console command, and an options argument. Different options are available for the different console commands.
+Qualquer comando do console pode ser chamado explicitamente usando o método `call` na instancia do Hexo. Cada chamada recebe dois argumentos: o nome do comando do console, e um argumento de opções. Existem diferentes opções disponíveis para os diferentes comandos.
 
 ``` js
 hexo.call('generate', {}).then(function(){
@@ -51,9 +48,10 @@ hexo.call('generate', {}).then(function(){
 });
 ```
 
-## Exit
+## Sair
 
-You should call the `exit` method upon successful or unsuccessful completion of a console command. This allows Hexo to exit gracefully and finish up important things such as saving the database.
+Você deve chamar o método `exit` após a conclusão bem sucedida ou não bem sucedida de um comando. Isso permite que o Hexo saia e termine coisas importantes, como salvar o banco de dados.
+
 
 ``` js
 hexo.call('generate').then(function(){

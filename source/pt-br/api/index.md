@@ -6,7 +6,7 @@ Por favor, note que essa documentação é válida apenas para o Hexo 3 ou super
 
 ## Iniciando
 
-Primeiro, temos que criar uma instancia Hexo. Uma nova instancia recebe dois argumentos: o diretório raiz do site, `base_dir`, e um objeto com a opções de inicialização. Em seguida, inicializamos essa instância chamando o método `init`, que irá carregar as configurações e plugins do Hexo.
+Primeiro, temos que criar uma instancia do Hexo. Uma nova instancia recebe dois argumentos: o diretório raiz do site, `base_dir`, e um objeto com a opções de inicialização. Em seguida, inicializamos essa instância chamando o método `init`, que irá carregar as configurações e plugins do Hexo.
 
 ``` js
 var Hexo = require('hexo');
@@ -26,7 +26,7 @@ Opção | Descrição | Padrão
 
 ## Carregar Arquivos
 
-Hexo fornece dois métodos para carregar arquivos: `load` e `watch`. O método `load` é usado para carregador todos os arquivos da pasta `source` como também os dados do tema. O método `watch` faz a mesma coisa que o `load`, mas também observará mudanças nos arquivos continuamente..
+O Hexo fornece dois métodos para carregar arquivos: `load` e `watch`. O método `load` é usado para carregador todos os arquivos da pasta `source` como também os dados do tema. O método `watch` faz a mesma coisa que o `load`, mas também observará mudanças nos arquivos continuamente..
 
 Ambos os métodos irão carregar a lista de arquivos e passar para os processadores correspondentes. Depois de todos os arquivos terem sido processados, eles irão chamar os geradores para criar as rotas.
 

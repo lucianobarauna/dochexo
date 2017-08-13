@@ -1,19 +1,20 @@
-title: Deployment
+title: Implantação
 ---
-Hexo provides a fast and easy deployment strategy. You only need one single command to deploy your site to your servers.
+
+A Hexo fornece uma estratégia de implantação rápida e fácil. Você só precisa de um único comando para implantar seu site em seus servidores.
 
 ``` bash
 $ hexo deploy
 ```
 
-Before your first deployment, you will have to modify some settings in `_config.yml`. A valid deployment setting must have a `type` field. For example:
+Antes da sua primeira implantação, você terá que modificar algumas configurações em `_config.yml`. Uma configuração de implantação válida deve ter um campo `type`. Por exemplo:
 
 ``` yaml
 deploy:
   type: git
 ```
 
-You can use multiple deployers. Hexo will execute each deployer in order.
+Você pode usar múltiplos implementadores. O Hexo executará cada implementador em ordem.
 
 ``` yaml
 deploy:
@@ -25,13 +26,13 @@ deploy:
 
 ## Git
 
-Install [hexo-deployer-git].
+Instale [hexo-deployer-git].
 
 ``` bash
 $ npm install hexo-deployer-git --save
 ```
 
-Edit settings.
+Editando configurações.
 
 ``` yaml
 deploy:
@@ -41,22 +42,22 @@ deploy:
   message: [message]
 ```
 
-Option | Description
+Opções | Descrição
 --- | ---
-`repo` | GitHub/Bitbucket/Coding/GitLab repository URL
-`branch` | Branch name. The deployer will detect the branch automatically if you are using GitHub or GitCafe.
-`message` | Customize commit message (Default to `Site updated: {% raw %}{{ now('YYYY-MM-DD HH:mm:ss') }}{% endraw %}`)
+`repo` | GitHub/Bitbucket/Coding/GitLab URL do repositório
+`branch` | Nome da branch. O implementador detectará o branch automaticamente se estiver usando o GitHub or GitCafe.
+`message` | Customizando a mensagem de commit (Padrão é `Site updated: {% raw %}{{ now('YYYY-MM-DD HH:mm:ss') }}{% endraw %}`)
 
 
 ## Heroku
 
-Install [hexo-deployer-heroku].
+Instale [hexo-deployer-heroku].
 
 ``` bash
 $ npm install hexo-deployer-heroku --save
 ```
 
-Edit settings.
+Editando configurações.
 
 ``` yaml
 deploy:
@@ -67,18 +68,18 @@ deploy:
 
 Option | Description
 --- | ---
-`repo`, `repository` | Heroku repository URL
-`message` | Customize commit message (Default to `Site updated: {% raw %}{{ now('YYYY-MM-DD HH:mm:ss') }}{% endraw %}`)
+`repo`, `repository` | Heroku URL do repositório
+`message` | Customizando a mensagem de commit (Padão é: `Site updated: {% raw %}{{ now('YYYY-MM-DD HH:mm:ss') }}{% endraw %}`)
 
 ## Rsync
 
-Install [hexo-deployer-rsync].
+Instale [hexo-deployer-rsync].
 
 ``` bash
 $ npm install hexo-deployer-rsync --save
 ```
 
-Edit settings.
+Editando configurações.
 
 ``` yaml
 deploy:
@@ -92,25 +93,25 @@ deploy:
   ignore_errors: [true|false]
 ```
 
-Option | Description | Default
+Opção | Descrição | Padão
 --- | --- | ---
-`host` | Address of remote host |
-`user` | Username |
-`root` | Root directory of remote host |
-`port` | Port | 22
-`delete` | Delete old files on remote host | true
-`verbose` | Display verbose messages | true
-`ignore_errors` | Ignore errors | false
+`host` | Endereço do host remoto |
+`user` | Nome de usuário |
+`root` | Diretório raiz do host remoto |
+`port` | Porta | 22
+`delete` | Excluir arquivos antigos no host remoto | true
+`verbose` | Exibir mensagens detalhadas | true
+`ignore_errors` | Ignorar erros | false
 
 ## OpenShift
 
-Install [hexo-deployer-openshift].
+Instale [hexo-deployer-openshift].
 
 ``` bash
 $ npm install hexo-deployer-openshift --save
 ```
 
-Edit settings.
+Editar configurações.
 
 ``` yaml
 deploy:
@@ -119,20 +120,20 @@ deploy:
   message: [message]
 ```
 
-Option | Description
+Opções | Descrição
 --- | ---
-`repo` | OpenShift repository URL
-`message` | Customize commit message (Default to `Site updated: {% raw %}{{ now('YYYY-MM-DD HH:mm:ss') }}{% endraw %}`)
+`repo` | OpenShift URL do repositório
+`message` | Customizando a menssagem de commit (Padrão é `Site updated: {% raw %}{{ now('YYYY-MM-DD HH:mm:ss') }}{% endraw %}`)
 
 ## FTPSync
 
-Install [hexo-deployer-ftpsync].
+Instale [hexo-deployer-ftpsync].
 
 ``` bash
 $ npm install hexo-deployer-ftpsync --save
 ```
 
-Edit settings.
+Editando configurações.
 
 ``` yaml
 deploy:
@@ -147,26 +148,27 @@ deploy:
   verbose: [true|false]
 ```
 
-Option | Description | Default
+Opções | Descrição | Padrão
 --- | --- | ---
-`host` | Address of remote host |
-`user` | Username |
-`pass` | Password |
-`remote` | Root directory of remote host | `/`
-`port` | Port | 21
-`ignore` | Ignore the files on either host or remote |
-`connections` | Connections number | 1
-`verbose` | Display verbose messages | false
+`host` | Endereço do host remoto |
+`user` | Nome de usuário |
+`pass` | Senha |
+`remote` | Diretório raiz do host remoto | `/`
+`port` | Porta | 21
+`ignore` | Ignore os arquivos no host ou no controle remoto  |
+`connections` | Número de conexões | 1
+`verbose` | Exibir mensagens detalhadas | false
+
 
 ## SFTP
 
-Install [hexo-deployer-sftp]. Deploys the site via SFTP, allowing for passwordless connections using ssh-agent.
+Instale [hexo-deployer-sftp]. Implementa o site via SFTP, permitindo conexões sem senhas usando ssh-agent.
 
 ``` bash
 $ npm install hexo-deployer-sftp --save
 ```
 
-Edit settings.
+Editando configurações.
 
 ``` yaml
 deploy:
@@ -182,20 +184,21 @@ deploy:
   remotePath: [remotePath]
 ```
 
-Option | Description | Default
+Opção | Descrição | Padrão
 --- | --- | ---
-`host` | Address of remote host |
-`user` | Username |
-`pass` | Password |
-`remotePath` | Root directory of remote host | `/`
-`port` | Port | 22
-`privateKey` | Path to a ssh private key |
-`passphrase` | Optional passphrase for the private key | 
-`agent` | Path to the ssh-agent socket | `$SSH_AUTH_SOCK`
+`host` | Endereço do host remoto |
+`user` | Nome de usuário |
+`pass` | Senha |
+`remotePath` | Diretório raiz do host remoto | `/`
+`port` | Porto | 22
+`privateKey` | Caminho para uma chave privada do ssh |
+`passphrase` | Frase secreta opcional para a chave privada |
+`agent` | Caminho para o ssh do agente ssh | `$SSH_AUTH_SOCK`
 
-## Other Methods
 
-All generated files are saved in the `public` folder. You can copy them to wherever you like.
+## Outros metódos
+
+Todos os arquivos gerados são salvos na pasta `public`. Você pode copiá-los para onde quiser.
 
 [hexo-deployer-git]: https://github.com/hexojs/hexo-deployer-git
 [hexo-deployer-heroku]: https://github.com/hexojs/hexo-deployer-heroku

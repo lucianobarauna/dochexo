@@ -1,93 +1,94 @@
-title: Variables
+title: Variáveis
 ---
-### Global Variables
+### Variáveis globais
 
-Variable | Description | Type
+Variáveis | Descrição | Tipo
 --- | --- | ---
-`site` | Sitewide information. | `object`; see [Site Variables]
-`page` | Page specific information and custom variables set in front-matter. | `object`; see [Page Variables]
-`config` | Site configuration. | `object` (your site's _config file)
-`theme` | Theme configuration. Inherits from site configuration. | `object` (your theme's _config file)
-`_` (single underscore) | Lodash library | see [Lodash](https://lodash.com/  "Lodash" target="_blank") documentation
+`site` | Informações do site. | `object`; veja [Variáveis do site]
+`page` | Informações específicas da página e vpersonalização de variáveis definidas no front. | `object`; veja [Página Variáveis]
+`config` | Configuração do site. | `object` (seu site arquivo _config)
+`theme` | Configuração de tema. Herda configuração do site. | `object` (seu arquivo de tema _config)
+`_` (underscore) | Biblioteca Lodash | Veja [Lodash](https://lodash.com/  "Lodash" target="_blank") documentação
 `path` | Path of current page | `string`
-`url` | Full URL of current page | `string`
-`env` | Environment variables | ???
+`url` | URL completo da página atual | `string`
+`env` | Variáveis de ambiente | ???
 
-### Site Variables
+### Variáveis do site
 
-Variable | Description | Type
+Variáveis | Descrição | Tipo
 --- | --- | ---
-`site.posts` | All posts | `array` of `post` objects
-`site.pages` | All pages | `array` of `page` objects
-`site.categories` | All categories | `array` of ???
-`site.tags` | All tags | `array` of ???
+`site.posts` | Todos os posts | `array` de `post` objetos
+`site.pages` | Todas as páginas | `array` de `page` objetos
+`site.categories` | Todas as categorias | `array` de ???
+`site.tags` | Todas as tags | `array` de ???
 
-### Page Variables
+### Variáveis da página
 
-**Article (`page`)**
+**Artigo (`page`)**
 
-Variable | Description | Type
+Variáveis | Descrição | Tipo
 --- | --- | ---
-`page.title` | Article title | `string`
-`page.date` | Article created date | [Moment.js] object
-`page.updated` | Article last updated date | [Moment.js] object
-`page.comments` | Comment enabled or not | `boolean`
-`page.layout` | Layout name | `string`
-`page.content` | The full processed content of the article | `string`
-`page.excerpt` | Article excerpt | `string`
-`page.more` | Contents except article excerpt | `string`
-`page.source` | The path of the source file | `string`
-`page.full_source` | Full path of the source file | `string`
-`page.path` | The URL of the article without root URL. We usually use `url_for(page.path)` in theme. | `string`
-`page.permalink` | Full URL of the article | `string`
-`page.prev` | The previous post, `null` if the post is the first post | ???
-`page.next` | The next post, `null` if the post is the last post | ???
-`page.raw` | The raw data of the article | ???
-`page.photos` | The photos of the article (Used in gallery posts) | array of ???
-`page.link` | The external link of the article (Used in link posts) | `string`
+`page.title` | Artigo title | `string`
+`page.date` | Artigo criado data | [Moment.js] objeto
+`page.updated` | Última data atualizada do artigo | [Moment.js] object
+`page.comments` | CComentário habilitado ou não | `boolean`
+`page.layout` | Layout nome | `string`
+`page.content` | O conteúdo completo processado do artigo | `string`
+`page.excerpt` | Trecho do artigo| `string`
+`page.more` | Conteúdo exceto trecho do artigo | `string`
+`page.source` | O caminho do arquivo de origem | `string`
+`page.full_source` | Caminho completo do arquivo de origem | `string`
+`page.path` | O URL do artigo sem URL de raiz. Usamos geralmente `url_for(page.path)` no tema. | `string`
+`page.permalink` | URL completo do artigo | `string`
+`page.prev` | O post anterior, `null` se o post for o primeiro post | ???
+`page.next` | O próximo post, `null` se a postagem for a última publicação | ???
+`page.raw` | Os dados brutos do artigo | ???
+`page.photos` | As fotos do artigo (Usado em posts da galeria) | array de ???
+`page.link` | O link externo do artigo (Usado em postagens de link) | `string`
 
-**Post (`post`):** Same as `page` layout but add the following variables.
 
-Variable | Description | Type
+**Post (`post`):** O mesmo que o layout `page` mas adicione as seguintes variáveis.
+
+Variáveis | Descrição | Tipo
 --- | --- | ---
-`page.published` | True if the post is not a draft | `boolean`
-`page.categories` | All categories of the post | `array` of ???
-`page.tags` | All tags of the post | `array` of ???
+`page.published` | Verdadeiro se a postagem não for um rascunho | `boolean`
+`page.categories` | Todas as categorias da postagem | `array` de ???
+`page.tags` | Todas as tags da postagem | `array` de ???
 
 **Home (`index`)**
 
-Variable | Description | Type
+Variáveis | Descrição | Tipo
 --- | --- | ---
-`page.per_page` | Posts displayed per page | `number`
-`page.total` | Total number of pages | `number`
-`page.current` | Current page number | `number`
-`page.current_url` | The URL of current page | `string`
-`page.posts` | Posts in this page ([Data Model]) | ??? (what is Data Model?)
-`page.prev` | Previous page number. `0` if the current page is the first. | `number`
-`page.prev_link` | The URL of previous page. `''` if the current page is the first. | `string`
-`page.next` | Next page number. `0` if the current page is the last. | `number`
-`page.next_link` | The URL of next page. `''` if the current page is the last. | `string`
-`page.path` | The URL of current page without root URL. We usually use `url_for(page.path)` in theme. | `string`
+`page.per_page` | Publicações exibidas por página | `number`
+`page.total` | Número total de páginas | `number`
+`page.current` | Número da página atual | `number`
+`page.current_url` | O URL da página atual | `string`
+`page.posts` | Postagens nesta página ([Modelo de dados]) | ??? (O que é o Data Model?)
+`page.prev` | Número da página anterior. `0` se a página atual for a primeira. | `number`
+`page.prev_link` | O URL da página anterior. `''` se a página atual for a primeira. | `string`
+`page.next` | Número da página seguinte. `0` se a página atual for a última. | `number`
+`page.next_link` | O URL da próxima página. `''` se a página atual for a última. | `string`
+`page.path` | O URL da página atual sem URL de raiz. Costumamos usar `url_for(page.path)` no tema. | `string`
 
-**Archive (`archive`):** Same as `index` layout but add the following variables.
+**Arquivo (`archive`):** O mesmo que o layout do "índice", mas adicione as seguintes variáveis.
 
-Variable | Description | Type
+Variáveis | Descrição | Tipo
 --- | --- | ---
-`page.archive` | Equals `true` | `boolean`
-`page.year` | Archive year (4-digit) | `number`
-`page.month` | Archive month (2-digit without leading zeros) | `number`
+`page.archive` | Igualar `true` | `boolean`
+`page.year` | Ano de arquivo (4-digitos) | `number`
+`page.month` | Arquivo mês (2 dígitos sem zeros à frente) | `number`
 
-**Category (`category`):** Same as `index` layout but add the following variables.
+**Categoria (`category`):** O mesmo que o layout do `index` mas adicione as seguintes variáveis.
 
-Variable | Description | Type
+Variáveis | Descrição | Tipo
 --- | --- | ---
-`page.category` | Category name | `string`
+`page.category` | Nome da categoria | `string`
 
-**Tag (`tag`):** Same as `index` layout but add the following variables.
+**Tag (`tag`):** O mesmo que o layout do `index` mas adicione as seguintes variáveis.
 
-Variable | Description | Type
+Variáveis | Descrição | Tipo
 --- | --- | ---
-`page.tag` | Tag name | `string`
+`page.tag` | Tag nome | `string`
 
 [Moment.js]: http://momentjs.com/
 [Site Variables]: #Site-Variables

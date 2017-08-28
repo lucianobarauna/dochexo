@@ -1,12 +1,11 @@
 title: Helpers
 ---
-Helpers are used in templates to help you insert snippets quickly.  Helpers cannot be used in source files.
-
+Os Helpers são usados em templates para ajudá-lo a inserir trechos rapidamente. Os helpers não podem ser usados em arquivos de origem.
 ## URL
 
 ### url_for
 
-Returns a url with the root path prefixed. You should use this helper instead of `config.root + path` since Hexo 2.7.
+Retorna uma url com o caminho root prefixado. Você deve usar esse helper em vez de `config.root + path` desde Hexo 2.7.
 
 ``` js
 <%- url_for(path) %>
@@ -14,7 +13,7 @@ Returns a url with the root path prefixed. You should use this helper instead of
 
 ### relative_url
 
-Returns the relative URL from `from` to `to`.
+Retorna o URL relativo de `from` para `to`.
 
 ``` js
 <%- relative_url(from, to) %>
@@ -22,14 +21,14 @@ Returns the relative URL from `from` to `to`.
 
 ### gravatar
 
-Inserts a Gravatar image.
-If you don't specify the [options] parameter, the default options will apply. Otherwise, you can set it to a number which will then be passed on as the size parameter to Gravatar. Finally, if you set it to an object, it will be converted into a query string of parameters for Gravatar.
+Insere uma imagem Gravatar.
+Se você não especificar o parâmetro [options], as opções padrão serão aplicadas. Caso contrário, você pode configurá-lo para um número que será passado como parâmetro de tamanho para o Gravatar. Finalmente, se você configurá-lo para um objeto, ele será convertido em uma seqüência de consulta de parâmetros para o Gravatar.
 
 ``` js
 <%- gravatar(email, [options]);
 ```
 
-**Examples:**
+**Exemplos:**
 
 ``` js
 <%- gravatar('a@abc.com') %>
@@ -46,13 +45,13 @@ If you don't specify the [options] parameter, the default options will apply. Ot
 
 ### css
 
-Loads CSS files. `path` can be an array or a string. If `path` isn't prefixed with `/` or any protocol, it'll get prefixed with the root URL. If you didn't add the `.css` extension after `path`, it will be added automatically.
+Carrega arquivos CSS. `path` pode ser uma array ou uma string. Se `path` não for prefixado com `/` ou com qualquer protocolo, ele receberá prefixo com o URL de root. Se você não adicionou a extensão `.css` após ` path`, ela será adicionada automaticamente.
 
 ``` js
 <%- css(path, ...) %>
 ```
 
-**Examples:**
+**Exemplos:**
 
 ``` js
 <%- css('style.css') %>
@@ -65,13 +64,13 @@ Loads CSS files. `path` can be an array or a string. If `path` isn't prefixed wi
 
 ### js
 
-Loads JavaScript files. `path` can be an array or a string. If `path` isn't prefixed with `/` or any protocol, it'll get prefixed with the root URL. If you didn't add the `.js` extension after `path`, it will be added automatically.
+Carrega arquivos JavaScript. `path` pode ser uma array ou uma string. Se `path` não for prefixado com `/` ou com qualquer protocolo, ele receberá prefixo com o URL de raiz. Se você não adicionou a extensão `.js` após` path`, ela será adicionada automaticamente.
 
 ``` js
 <%- js(path, ...) %>
 ```
 
-**Examples:**
+**Exemplos:**
 
 ``` js
 <%- js('script.js') %>
@@ -84,19 +83,19 @@ Loads JavaScript files. `path` can be an array or a string. If `path` isn't pref
 
 ### link_to
 
-Inserts a link.
+Inserindo link
 
 ``` js
 <%- link_to(path, [text], [options]) %>
 ```
 
-Option | Description | Default
+Opção | Descrição | Padrão
 --- | --- | ---
-`external` | Opens the link in a new tab | false
-`class` | Class name |
+`external` | Abre o link em uma nova guia | falso
+`class` | Nome da classe |
 `id` | ID |
 
-**Examples:**
+**Exemplos:**
 
 ``` js
 <%- link_to('http://www.google.com') %>
@@ -111,22 +110,22 @@ Option | Description | Default
 
 ### mail_to
 
-Inserts a mail link.
+Insere um link de email.
 
 ``` js
 <%- mail_to(path, [text], [options]) %>
 ```
 
-Option | Description
+Opção | Descrição
 --- | ---
-`class` | Class name
+`class` | Nome da classe
 `id` | ID
-`subject` | Mail subject
+`subject` | Assunto do email
 `cc` | CC
 `bcc` | BCC
-`body` | Mail content
+`body` | Conteúdo do email
 
-**Examples:**
+**Exemplos:**
 
 ``` js
 <%- mail_to('a@abc.com') %>
@@ -138,13 +137,13 @@ Option | Description
 
 ### image_tag
 
-Inserts an image.
+Inseri uma imagem.
 
 ``` js
 <%- image_tag(path, [options]) %>
 ```
 
-Option | Description
+Opção | Descrição
 --- | ---
 `alt` | Alternative text of the image
 `class` | Class name
@@ -154,7 +153,7 @@ Option | Description
 
 ### favicon_tag
 
-Inserts a favicon.
+Inseri um favico
 
 ``` js
 <%- favicon_tag(path) %>
@@ -162,22 +161,22 @@ Inserts a favicon.
 
 ### feed_tag
 
-Inserts a feed link.
+Insere um link de feed.
 
 ``` js
 <%- feed_tag(path, [options]) %>
 ```
 
-Option | Description | Default
+Opção | Descrição | Padrão
 --- | --- | ---
-`title` | Feed title |
-`type` | Feed type | atom
+`title` | Título do feed |
+`type` | Tipo do feed | atom
 
-## Conditional Tags
+## Tags condiçionais
 
 ### is_current
 
-Check whether `path` matches the URL of the current page. Use `strict` options to enable strict matching.
+Verifique se `path` corresponde ao URL da página atual. Use opções `strict` para habilitar um modo strito e correspôndente.
 
 ``` js
 <%- is_current(path, [strict]) %>
@@ -185,7 +184,7 @@ Check whether `path` matches the URL of the current page. Use `strict` options t
 
 ### is_home
 
-Check whether the current page is home page.
+Verifique se a página atual é a pagina inicial.
 
 ``` js
 <%- is_home() %>
@@ -193,7 +192,7 @@ Check whether the current page is home page.
 
 ### is_post
 
-Check whether the current page is a post.
+Verifique se a página atual é uma publicação.
 
 ``` js
 <%- is_post() %>
@@ -201,7 +200,7 @@ Check whether the current page is a post.
 
 ### is_archive
 
-Check whether the current page is an archive page.
+Verifique se a página atual é uma página de arquivo.
 
 ``` js
 <%- is_archive() %>
@@ -209,7 +208,7 @@ Check whether the current page is an archive page.
 
 ### is_year
 
-Check whether the current page is a yearly archive page.
+Verifique se a página atual é uma página de arquivo anual.
 
 ``` js
 <%- is_year() %>
@@ -217,7 +216,7 @@ Check whether the current page is a yearly archive page.
 
 ### is_month
 
-Check whether the current page is a monthly archive page.
+Verifique se a página atual é uma página de arquivo mensal.
 
 ``` js
 <%- is_month() %>

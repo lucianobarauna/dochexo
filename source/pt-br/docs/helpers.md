@@ -227,6 +227,9 @@ Verifique se a página atual é uma página de arquivo mensal.
 Check whether the current page is a category page.
 If a string is given as parameter, check whether the current page match the given category.
 
+Verifique se a página atual é uma página de categoria.
+Se uma string for dada como parâmetro, verifique se a página atual corresponde à categoria dada.
+
 ``` js
 <%- is_category() %>
 <%- is_category('hobby') %>

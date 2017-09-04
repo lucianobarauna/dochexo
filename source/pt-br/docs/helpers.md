@@ -145,15 +145,15 @@ Inseri uma imagem.
 
 Opção | Descrição
 --- | ---
-`alt` | Alternative text of the image
-`class` | Class name
+`alt` | Alternativa texto ou imagem
+`class` | Nome de class
 `id` | ID
-`width` | Image width
-`height` | Image height
+`width` | Largura da imagem
+`height` | Altura da imagem
 
 ### favicon_tag
 
-Inseri um favico
+Insere um favico
 
 ``` js
 <%- favicon_tag(path) %>

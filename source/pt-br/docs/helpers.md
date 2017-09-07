@@ -224,10 +224,7 @@ Verifique se a página atual é uma página de arquivo mensal.
 
 ### is_category
 
-Check whether the current page is a category page.
-If a string is given as parameter, check whether the current page match the given category.
-
-Verifique se a página atual é uma página de categoria.
+Verifica se a página atual é uma página de categoria.
 Se uma string for dada como parâmetro, verifique se a página atual corresponde à categoria dada.
 
 ``` js
@@ -237,19 +234,20 @@ Se uma string for dada como parâmetro, verifique se a página atual corresponde
 
 ### is_tag
 
-Check whether the current page is a tag page.
-If a string is given as parameter, check whether the current page match the given tag.
+Verifica se a página atual é uma página de tag.
+Se uma string for dada como parâmetro, verifique se a página atual corresponde à tag fornecida.
 
 ``` js
 <%- is_tag() %>
 <%- is_tag('hobby') %>
 ```
 
-## String Manipulation
+## Manipulação de String
 
 ### trim
 
-Removes prefixing and trailing spaces of a string.
+Remove espaços de prefixo e posterior de uma string.
+
 
 ``` js
 <%- trim(string) %>
@@ -257,7 +255,7 @@ Removes prefixing and trailing spaces of a string.
 
 ### strip_html
 
-Sanitizes all HTML tags in a string.
+Remove as tags HTML e tranformando o conteúdo em string
 
 ``` js
 <%- strip_html(string) %>

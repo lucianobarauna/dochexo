@@ -1,6 +1,7 @@
-title: Troubleshooting
+title: Solução de problema
 ---
-In case you're experiencing problems with using Hexo, here is a list of solutions to some frequently encountered issues. If this page doesn't help you solve your problem, try doing a search on [GitHub](https://github.com/hexojs/hexo/issues) or our [Google Group](https://groups.google.com/group/hexo).
+
+No caso de você tem problemas com o uso do Hexo, aqui está uma lista de soluções para alguns problemas freqüentemente encontrados. Se esta página não o ajudar a resolver seu problema, tente fazer uma pesquisa em [GitHub](https://github.com/hexojs/hexo/issues) ou nosso Google Group](https://groups.google.com/group/hexo).
 
 ## YAML Parsing Error
 
@@ -9,16 +10,16 @@ JS-YAML: incomplete explicit mapping pair; a key node is missed at line 18, colu
       last_updated: Last updated: %s
 ```
 
-Wrap the string with quotations if it contains colons.
+Envolva a string com aspas se ela contiver dois pontos.
 
 ``` plain
 JS-YAML: bad indentation of a mapping entry at line 18, column 31:
       last_updated:"Last updated: %s"
 ```
 
-Make sure you are using soft tabs and add a space after colons.
+Certifique-se de que está usando abas flexíveis e adicione um espaço após os dois pontos
 
-You can see [YAML Spec](http://www.yaml.org/spec/1.2/spec.html) for more info.
+Você pode ver em [YAML Spec](http://www.yaml.org/spec/1.2/spec.html) para mais informações.
 
 ## EMFILE Error
 
@@ -26,27 +27,27 @@ You can see [YAML Spec](http://www.yaml.org/spec/1.2/spec.html) for more info.
 Error: EMFILE, too many open files
 ```
 
-Though Node.js has non-blocking I/O, the maximum number of synchronous I/O is still limited by the system. You may come across an EMFILE error when trying to generate a large number of files. You can try to run the following command to increase the number of allowed synchronous I/O operations.
+Embora o Node.js tenha I/O não-bloqueadoras, o número máximo de I/O síncronas ainda é limitado pelo sistema. Você pode encontrar um erro EMFILE ao tentar gerar uma grande quantidade de arquivos. Você pode tentar executar o seguinte comando para aumentar o número de operações de I/O síncronas permitidas.
 
 ``` bash
 $ ulimit -n 10000
 ```
 
-## Process Out of Memory
+## Processos com pouca memeória
 
-When you encounter this error during generation:
+Quando você encontrar esse erro durante a geração:
 ```
 FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - process out of memory
 ```
 
-Increase Node.js heap memory size by changing the first line of `hexo-cli` (`which hexo` to look for the file).
+Aumente o tamanho da memória de pilha Node.js alterando a primeira linha de `hexo-cli` (`which hexo` para procurar o arquivo).
 ```
 #!/usr/bin/env node --max_old_space_size=8192
 ```
 
-[Out of memory while generating a huge blog · Issue #1735 · hexojs/hexo](https://github.com/hexojs/hexo/issues/1735)
+[Sem memória ao gerar um enorme blog · Edição # 1735 · hexojs / hexo](https://github.com/hexojs/hexo/issues/1735)
 
-## Git Deployment Problems
+## Git Problemas de deploy
 
 ``` plain
 error: RPC failed; result=22, HTTP code = 403
@@ -54,29 +55,29 @@ error: RPC failed; result=22, HTTP code = 403
 fatal: 'username.github.io' does not appear to be a git repository
 ```
 
-Make sure you have [set up git](https://help.github.com/articles/set-up-git) on your computer properly or try to use HTTPS repository URL instead.
+Assegure-se de ter [configurado o git](https://help.github.com/articles/set-up-git) no seu computador corretamente ou tente usar o URL do repositório HTTPS em vez disso.
 
-## Server Problems
+## Problemas de servidor
 
 ``` plain
 Error: listen EADDRINUSE
 ```
 
-You may have started two Hexo servers at the same time or there might be another application using the same port. Try to modify the `port` setting or start the Hexo server with the `-p` flag.
+Você pode ter iniciado dois servidores Hexo ao mesmo tempo ou pode haver outro aplicativo usando a mesma porta. Tente modificar a configuração `port` ou iniciar o servidor Hexo com o sinalizador` -p`.
 
 ``` bash
 $ hexo server -p 5000
 ```
 
-## Plugin Installation Problems
+## Problemas na intalação de plugins
 
 ``` plain
 npm ERR! node-waf configure build
 ```
 
-This error may occur when trying to install a plugin written in C, C++ or another non-JavaScript language. Make sure you have installed the right compiler on your computer.
+Esse erro pode ocorrer ao tentar instalar um plugin escrito em C, C ++ ou outro idioma não-JavaScript. Verifique se você instalou o compilador correto em seu computador.
 
-## Error with DTrace (Mac OS X)
+## Error com DTrace (Mac OS X)
 
 ```plain
 { [Error: Cannot find module './build/Release/DTraceProviderBindings'] code: 'MODULE_NOT_FOUND' }
@@ -84,32 +85,30 @@ This error may occur when trying to install a plugin written in C, C++ or anothe
 { [Error: Cannot find module './build/Debug/DTraceProviderBindings'] code: 'MODULE_NOT_FOUND' }
 ```
 
-DTrace install may have issue, use this:
+A instalação do DTrace pode ter problemas, use isso:
 ```sh
 $ npm install hexo --no-optional
 ```
 See [#1326](https://github.com/hexojs/hexo/issues/1326#issuecomment-113871796)
 
-## Iterate Data Model on Jade or Swig
+## Interando Data Model em Jade ou Swig
 
-Hexo uses [Warehouse] for its data model. It's not an array so you may have to transform objects into iterables.
-
+A Hexo usa [Warehouse] para o seu modelo de dados. Não é um array para que você possa ter que transformar objetos em iteráveis.
 ```
 {% for post in site.posts.toArray() %}
 {% endfor %}
 ```
 
-## Data Not Updated
+## Data não atualizada
 
-Some data cannot be updated, or the newly generated files are identical to those of the last version. Clean the cache and try again.
-
+Alguns dados não podem ser atualizados, ou os arquivos recém-gerados são idênticos aos da última versão. Limpe o cache e tente novamente.
 ``` bash
 $ hexo clean
 ```
 
-## No command is executed
+## Nenhum comando é executado
 
-When you can't get any command except `help`, `init` and `version` to work and you keep getting content of `hexo help`, it could be caused by a missing `hexo` in `package.json`:
+Quando você não pode obter nenhum comando, exceto `help`,`init` e `version` para funcionar e você continua recebendo conteúdo de `hexo help`, ele pode ser causado por um `hexo` que falta no `package.json`:
 
 ```json
 {
@@ -119,9 +118,9 @@ When you can't get any command except `help`, `init` and `version` to work and y
 }
 ```
 
-## Escape Contents
+## Ecapando conteúdos
 
-Hexo uses [Nunjucks] to render posts ([Swig] was used in older version, which share a similar syntax). Content wrapped with `{% raw %}{{ }}{% endraw %}` or `{% raw %}{% %}{% endraw %}` will get parsed and may cause problems. You can wrap sensitive content with the `raw` tag plugin.
+Hexo usa [Nunjucks] para renderizar posts ([Swig] foi usado na versão mais antiga, que compartilha uma sintaxe semelhante). O conteúdo enrolado com `{% raw%} {{}} {% endraw%}` ou `{% raw%} {%%} {% endraw%}` será analisado e pode causar problemas. Você pode conter conteúdo sensível com o plugin de tag `raw`.
 
 ```
 {% raw %}
@@ -131,7 +130,7 @@ Hello {{ sensitive }}
 
 ## ENOSPC Error (Linux)
 
-Sometimes when running the command `$ hexo server` it returns an error:
+Às vezes, ao executar o comando `$ hexo server`, ele retorna um erro:
 ```
 Error: watch ENOSPC ...
 ```
@@ -139,37 +138,38 @@ It can be fixed by running `$ npm dedupe` or, if that doesn't help, try the foll
 ```
 $ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 ```
-This will increase the limit for the number of files you can watch.
+Isso aumentará o limite para o número de arquivos que você pode assistir.
 
 ## EMPERM Error (Windows Subsystem for Linux)
 
-When running `$ hexo server` in a BashOnWindows environment, it returns the following error:
+Ao executar `$ hexo server` em um ambiente BashOnWindows, ele retorna o seguinte erro:
 ```
 Error: watch /path/to/hexo/theme/ EMPERM
 ```
-Unfortunately, WSL does not currently support filesystem watchers. Therefore, the live updating feature of hexo's server is currently unavailable. You can still run the server from a WSL environment by first generating the files and then running it as a static server:
+Infelizmente, o WSL atualmente não suporta os observadores do sistema de arquivos. Portanto, o recurso de atualização ao vivo do servidor do hexo não está disponível no momento. Você ainda pode executar o servidor a partir de um ambiente WSL primeiro gerando os arquivos e depois executá-lo como um servidor estático:
 ``` sh
 $ hexo generate
 $ hexo server -s
 ```
-This is [a known BashOnWindows issue](https://github.com/Microsoft/BashOnWindows/issues/216), and on 15 Aug 2016, the Windows team said they would work on it. You can get progress updates and encourage them to prioritize it on [the issue's UserVoice suggestion page](https://wpdev.uservoice.com/forums/266908-command-prompt-console-bash-on-ubuntu-on-windo/suggestions/13469097-support-for-filesystem-watchers-like-inotify).
 
-## Template render error
+Este é [um problema BashOnWindows conhecido](https://github.com/Microsoft/BashOnWindows/issues/216), e em 15 de agosto de 2016, a equipe do Windows disse que eles trabalhariam nisso. Você pode obter atualizações de progresso e encorajá-las a priorizá-la na [página de sugestão UserVoice do problema](https://wpdev.uservoice.com/forums/266908-command-prompt-console-bash-on-ubuntu-on-windo/suggestions/13469097-support-for-filesystem-watchers-like-inotify).
 
-Sometimes when running the command `$ hexo generate` it returns an error:
+## Erro de renderização de template
+
+Às vezes, ao executar o comando `$ hexo generate`, ele retorna um erro:
 ```
 FATAL Something's wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html
 Template render error: (unknown path)
 ```
-It means that there are some unrecognizable words in your file.There are two possibilities One is your new page/post, and the other one is `_config.yml`.
-In `_config.yml`, don't forget add whitespace before a list in hash. There is the wiki page about [YAML](https://en.wikipedia.org/wiki/YAML).
-The error one:
+Isso significa que existem algumas palavras irreconhecíveis no seu arquivo. Existem duas possibilidades. Uma é sua nova page/post, e a outra é `_config.yml`.
+Em `_config.yml`, não esqueça de adicionar espaços em branco antes de uma lista no hash. Existe a página wiki sobre [YAML] (https://en.wikipedia.org/wiki/YAML).
+O erro um:
 ```
 plugins:
 - hexo-generator-feed
 - hexo-generator-sitemap
 ```
-The correct one:
+A correta:
 ```
 plugins:
   - hexo-generator-feed

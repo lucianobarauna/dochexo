@@ -2,7 +2,7 @@ title: Contribuindo
 ---
 ## Desenvolvimento
 
-Nós damos o parabêns a você por se juntar ao desenvolvimento do Hexo. Este documento irá ajudá-lo através do processo.
+Nós damos o parabéns a você por se juntar ao desenvolvimento do Hexo. Este documento irá ajudá-lo através do processo.
 
 ### Antes que você comece
 
@@ -80,8 +80,6 @@ A documentação Hexo é de código aberto e você pode encontrar o código-font
 4. Copie `en.yml` em `themes/navy/languages` e renomeie para o nome do idioma (todas as minúsculas).
 
 ## Reportando Issues
-
-When you encounter some problems when using Hexo, you can find the solutions in [Troubleshooting](troubleshooting.html) or ask me on [GitHub](https://github.com/hexojs/hexo/issues) or [Google Group](https://groups.google.com/group/hexo). If you can't find the answer, please report it on GitHub.
 
 Quando você encontra alguns problemas ao usar o Hexo, você pode encontrar as soluções em [Solução de problemas](troubleshooting.html) ou me pergunte no [GitHub](https://github.com/hexojs/hexo/issues) ou [Google Group](https://groups.google.com/group/hexo). Se você não conseguir encontrar a resposta, informe-a no GitHub.
 

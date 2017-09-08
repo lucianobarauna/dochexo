@@ -255,13 +255,13 @@ Remove espaços de prefixo e posterior de uma string.
 
 ### strip_html
 
-Remove as tags HTML e tranformando o conteúdo em string
+Remove as tags HTML e transforma o conteúdo em string
 
 ``` js
 <%- strip_html(string) %>
 ```
 
-**Examples:**
+**Exemplo:**
 
 ``` js
 <%- strip_html('It's not <b>important</b> anymore!') %>
@@ -270,13 +270,13 @@ Remove as tags HTML e tranformando o conteúdo em string
 
 ### titlecase
 
-Transforms a string into proper title caps.
+Transforme em camelcase o conteúdo ideal.
 
 ``` js
 <%- titlecase(string) %>
 ```
 
-**Examples:**
+**Exemplos:**
 
 ``` js
 <%- titlecase('this is an apple') %>
@@ -285,13 +285,13 @@ Transforms a string into proper title caps.
 
 ### markdown
 
-Renders a string with Markdown.
+Renderiza um conteúdo em markdown
 
 ``` js
 <%- markdown(str) %>
 ```
 
-**Examples:**
+**Exemplos:**
 
 ``` js
 <%- markdown('make me **strong**') %>
@@ -300,7 +300,7 @@ Renders a string with Markdown.
 
 ### render
 
-Renders a string.
+Renderiza em string.
 
 ``` js
 <%- render(str, engine, [options]) %>
@@ -308,13 +308,13 @@ Renders a string.
 
 ### word_wrap
 
-Wraps text into lines no longer than `length`. `length` is 80 by default.
+Coloque uma quebra de linha no texto  apartir de um limite de caracteres, o limite é `length`. `length` é 80 por padrão.
 
 ``` js
 <%- word_wrap(str, [length]) %>
 ```
 
-**Examples:**
+**Exemplos:**
 
 ``` js
 <%- word_wrap('Once upon a time', 8) %>
@@ -322,8 +322,7 @@ Wraps text into lines no longer than `length`. `length` is 80 by default.
 ```
 
 ### truncate
-
-Truncates text after certain `length`. Default is 30 characters.
+Trunca o texto após certo `length`. O padrão é 30 caracteres.
 
 ``` js
 <%- truncate(text, [options]) %>
@@ -346,26 +345,26 @@ Truncates text after certain `length`. Default is 30 characters.
 
 ### partial
 
-Loads other template files. You can define local variables in `locals`.
+Carrega outros arquivos de template. Você pode definir variáveis locais em `locals`.
 
 ``` js
 <%- partial(layout, [locals], [options]) %>
 ```
 
-Option | Description | Default
+Opção | Descrição | Padrão
 --- | --- | ---
-`cache` | Cache contents (Use fragment cache) | `false`
-`only` | Strict local variables. Only use variables set in `locals` in templates. | `false`
+`cache` | Conteúdo da cache (use cache de fragmento) | `false`
+`only` | Variáveis locais estritas. Use somente variáveis configuradas `locals` dentro de templates. | `false`
 
 ### fragment_cache
 
-Caches the contents in a fragment. It saves the contents within a fragment and serves the cache when the next request comes in.
+Cache o conteúdo em um fragmento. Salva o conteúdo dentro de um fragmento e serve o cache quando a próxima solicitação entrar.
 
 ``` js
 <%- fragment_cache(id, fn);
 ```
 
-**Examples:**
+**Exemplos:**
 
 ``` js
 <%- fragment_cache('header', function(){
@@ -377,13 +376,13 @@ Caches the contents in a fragment. It saves the contents within a fragment and s
 
 ### date
 
-Inserts formatted date. `date` can be unix time, ISO string, date object, or [Moment.js] object. `format` is `date_format` setting by default.
+Insere a data formatada. `date` pode ser tempo de unix, string ISO, objeto de data ou objeto [Moment.js]. `format` é ` date_format` a configuração por padrão.
 
 ``` js
 <%- date(date, [format]) %>
 ```
 
-**Examples:**
+**Exemplos:**
 
 ``` js
 <%- date(Date.now()) %>
@@ -395,13 +394,13 @@ Inserts formatted date. `date` can be unix time, ISO string, date object, or [Mo
 
 ### date_xml
 
-Inserts date in XML format. `date` can be unix time, ISO string, date object, or [Moment.js] object.
+Insere a data no formato XML. `date` pode ser tempo de unix, string ISO, objeto de data ou objeto [Moment.js].
 
 ``` js
 <%- date_xml(date) %>
 ```
 
-**Examples:**
+**Exemplos:**
 
 ``` js
 <%- date_xml(Date.now()) %>
@@ -410,13 +409,13 @@ Inserts date in XML format. `date` can be unix time, ISO string, date object, or
 
 ### time
 
-Inserts formatted time. `date` can be unix time, ISO string, date object, or [Moment.js] object. `format` is `time_format` setting by default.
+Insere o tempo formatado. `date` pode ser tempo de unix, string ISO, objeto de data ou objeto [Moment.js]. `format` é a configuração` time_format` por padrão.
 
 ``` js
 <%- time(date, [format]) %>
 ```
 
-**Examples:**
+**Exemplo:**
 
 ``` js
 <%- time(Date.now()) %>
@@ -428,13 +427,13 @@ Inserts formatted time. `date` can be unix time, ISO string, date object, or [Mo
 
 ### full_date
 
-Inserts formatted date and time. `date` can be unix time, ISO string, date object, or [Moment.js] object. `format` is `date_format + time_format` setting by default.
+Insere a data e a hora formatadas. `date` pode ser tempo de unix, string ISO, objeto de data ou objeto [Moment.js]. `format` é a configuração` date_format + time_format` por padrão.
 
 ``` js
 <%- full_date(date, [format]) %>
 ```
 
-**Examples:**
+**Exemplos:**
 
 ``` js
 <%- full_date(new Date()) %>
@@ -446,96 +445,98 @@ Inserts formatted date and time. `date` can be unix time, ISO string, date objec
 
 ### moment
 
-[Moment.js] library.
+[Moment.js] biblioteca.
 
 ## List
 
 ### list_categories
 
-Inserts a list of all categories.
+Insere uma lista de todas as categorias.
 
 ``` js
 <%- list_categories([options]) %>
 ```
 
-Option | Description | Default
+Insere uma lista de todas como categorias.
+
+Opção | Descrição | Padrão
 --- | --- | ---
-`orderby` | Order of categories | name
-`order` | Sort of order. `1`, `asc` for ascending; `-1`, `desc` for descending | 1
-`show_count` | Display the number of posts for each category | true
-`style` | Style to display the category list. `list` displays categories in an unordered list.  | list
-`separator` | Separator between categories. (Only works if `style` is not `list`) | ,
-`depth` | Levels of categories to be displayed. `0` displays all categories and child categories; `-1` is similar to `0` but displayed in flat; `1` displays only top level categories. | 0
-`class` | Class name of category list. | category
-`transform` | The function that changes the display of category name. |
-`suffix` | Add a suffix to link. | None
+`orderby` | Ordem das categorias | name
+`order` | Tipo de ordem. `1`,` asc` para ascender; `-1`,` desc` para descer | 1
+`show_count` | Exibir o número de postagens para cada categoria | true
+`style` | Estilo para exibir a lista de categorias. `list` exibe categorias em uma lista não ordenada. | lsit
+`separador` | Separador entre categorias. (Só funciona se `style` não for` list`) | ,
+`depth` | Níveis de categorias a serem exibidos. `0` exibe todas as categorias e categorias de crianças; `-1` é semelhante a` 0`, mas exibido em plano; `1` exibe apenas categorias de nível superior. | 0
+`class` | Nome da classe da lista de categorias. | category
+`transform` | A função que altera a exibição do nome da categoria. |
+`suffix`| Adicione um sufixo para vincular. | None
 
 ### list_tags
 
-Inserts a list of all tags.
+Inseri uma lista de tags
 
 ``` js
 <%- list_tags([options]) %>
 ```
 
-Option | Description | Default
+Opção | Descrição | Padrão
 --- | --- | ---
-`orderby` | Order of categories | name
-`order` | Sort of order. `1`, `asc` for ascending; `-1`, `desc` for descending | 1
-`show_count` | Display the number of posts for each tag | true
-`style` | Style to display the tag list. `list` displays tags in an unordered list.  | list
-`separator` | Separator between categories. (Only works if `style` is not `list`) | ,
-`class` | Class name of tag list. | tag
-`transform` | The function that changes the display of category name. |
-`amount` | The number of tags to display (0 = unlimited) | 0
-`suffix` | Add a suffix to link. | None
+`orderby` | Ordem das categorias | name
+`order` | Tipo de ordem. `1`,` asc` para ascender; `-1`,` desc` para descer | 1
+`show_count` | Exibir o número de postagens para cada tag | true
+`style` | Estilo para exibir a lista de tags. `list` exibe tags em uma lista não ordenada. | list
+`separator`| Separador entre categorias. (Só funciona se `style` não for` list`) | ,
+`class` | Nome da classe da lista de etiquetas. | tag
+`transform` | A função que altera a exibição do nome da categoria. |
+`amount` | O número de tags a exibir (0 = ilimitado) | 0
+`suffix` | Adicione um sufixo para vincular. | Nenhum
 
 ### list_archives
 
-Inserts a list of archives.
+Inseri uma lista de arquivos
 
 ``` js
 <%- list_archives([options]) %>
 ```
 
-Option | Description | Default
+Opção | Descrição | Padrão
 --- | --- | ---
-`type` | Type. This value can be `yearly` or `monthly`. | monthly
-`order` | Sort of order. `1`, `asc` for ascending; `-1`, `desc` for descending | 1
-`show_count` | Display the number of posts for each archive | true
-`format` | Date format | MMMM YYYY
-`style` | Style to display the archive list. `list` displays archives in an unordered list.  | list
-`separator` | Separator between archives. (Only works if `style` is not `list`) | ,
-`class` | Class name of archive list. | archive
-`transform` | The function that changes the display of archive name. |
+`tipo` | Tipo. Esse valor pode ser `yearly` ou `monthly`. | monthly
+`order` | Tipo de ordem. `1`,` asc` para ascender; `-1`,` desc` para descer | 1
+`show_count` | Exibir o número de postagens para cada arquivo | true
+`format` | Formato da data | MMMM AAAA
+`style` | Estilo para exibir a lista de arquivos. `list` exibe arquivos em uma lista não ordenada. | list
+`separador`| Separador entre arquivos. (Só funciona se `style` não for` list`) | ,
+`class` | Nome da classe da lista de arquivos. | archive
+`transform` | A função que altera a exibição do nome do archive. |
 
 ### list_posts
 
-Inserts a list of posts.
+Inseri uma lista de posts
 
 ``` js
 <%- list_posts([options]) %>
 ```
 
-Option | Description | Default
+Opção | Descrição | Padrão
 --- | --- | ---
-`orderby` | Order of posts | date
-`order` | Sort of order. `1`, `asc` for ascending; `-1`, `desc` for descending | 1
-`style` | Style to display the post list. `list` displays posts in an unordered list.  | list
-`separator` | Separator between posts. (Only works if `style` is not `list`) | ,
-`class` | Class name of post list. | post
-`amount` | The number of posts to display (0 = unlimited) | 6
-`transform` | The function that changes the display of post name. |
+`orderby` | Ordem de postagens | date
+`order` | Tipo de ordem. `1`,` asc` para ascender; `-1`,` desc` para descer | 1
+`style` | Estilo para exibir a lista de postagens. `list` exibe postagens em uma lista desordenada. | list
+`separador` | Separador entre postagens. (Só funciona se `style` não for` list`) | ,
+`class` | Nome da classe da lista de postagem. | post
+`amount` | O número de postagens a serem exibidas (0 = ilimitado) | 6
+`transform` | A função que altera a exibição do nome do post. |
 
 ### tagcloud
 
-Inserts a tag cloud.
+Inseri uma nuvem de tags
 
 ``` js
 <%- tagcloud([tags], [options]) %>
 ```
 
-Option | Description | Default
+Opção | Descrição | Padrão
 --- | --- | ---
 `min_font` | Minimal font size | 10
 `max_font` | Maximum font size | 20
@@ -547,59 +548,69 @@ Option | Description | Default
 `start_color` | Start color. You can use hex (`#b700ff`), rgba (`rgba(183, 0, 255, 1)`), hsla (`hsla(283, 100%, 50%, 1)`) or [color keywords]. This option only works when `color` is true. |
 `end_color` | End color. You can use hex (`#b700ff`), rgba (`rgba(183, 0, 255, 1)`), hsla (`hsla(283, 100%, 50%, 1)`) or [color keywords]. This option only works when `color` is true. |
 
-## Miscellaneous
+`min_font` | Tamanho mínimo da fonte | 10
+`max_font` | Tamanho máximo da fonte | 20
+`unidade` | Unidade de tamanho da fonte | px
+`amount` | Quantidade total de tags | 40
+`orderby` | Ordem de etiquetas | name
+`order` | Ordem de classificação. `1`,`sac` como ascendente; `-1`,` desc` como descendente | 1
+`cor`| Coloriza a nuvem de etiquetas | falso
+`start_color` | Comece a cor. Você pode usar hex (`#b700ff`), rgba (`rgba (183, 0, 255, 1)`), hsla (`hsla (283, 100%, 50%, 1)`) ou [palavras-chave coloridas]. Esta opção só funciona quando a cor é true. |
+`end_color` | Cor final. Você pode usar hex (`#b700ff`), rgba (`rgba (183, 0, 255, 1)`), hsla (` sla (283, 100%, 50%, 1)`) ou [palavras-chave coloridas]. Esta opção só funciona quando a cor é true. |
+
+## Diversos
 
 ### paginator
 
-Inserts a paginator.
+Inseri uma paginação.
 
 ``` js
 <%- paginator(options) %>
 ```
 
-Option | Description | Default
+Opção | Descrição | Padrão
 --- | --- | ---
-`base` | Base URL | /
-`format` | URL format | page/%d/
-`total` | The number of pages | 1
-`current` | Current page number | 0
-`prev_text` | The link text of previous page. Works only if `prev_next` is set to true. | Prev
-`next_text` | The link text of next page. Works only if `prev_next` is set to true. | Next
-`space` | The space text | &hellp;
-`prev_next` | Display previous and next links | true
-`end_size` | The number of pages displayed on the start and the end side | 1
-`mid_size` | The number of pages displayed between current page, but not including current page | 2
-`show_all` | Display all pages. If this is set true, `end_size` and `mid_size` will not works. | false
+`base` | URL básico | /
+`format` | Formato de URL | página /%d /
+`total` | O número de páginas | 1
+`current` | Número da página atual | 0
+`prev_text` | O texto do link da página anterior. Funciona apenas se `prev_next` estiver definido como true. | Prev
+`next_text` | O texto do link da próxima página. Funciona apenas se `prev_next` estiver definido como true. | Next
+`espaço` | O texto do espaço | &hellp;
+`prev_next` | Exibir os links anteriores e seguintes | true
+`end_size` | O número de páginas exibidas no início e no final | 1
+`mid_size` | O número de páginas exibidas entre a página atual, mas não incluindo a página atual | 2
+`show_all` | Exibir todas as páginas. Se isso for definido como verdade, `end_size` e` mid_size` não funcionarão. | false
 
 ### search_form
 
-Inserts a Google search form.
+Inseri o form de pesquisa do Google
 
 ``` js
 <%- search_form(options) %>
 ```
 
-Option | Description | Default
+Opção | Descrição | Padrão
 --- | --- | ---
-`class` | The class name of form | search-form
-`text` | Search hint word | Search
-`button` | Display search button. The value can be a boolean or a string. When the value is a string, it'll be the text of the button. | false
+`class` | O nome da classe do formulário | search-form
+`text`| Palavra de sugestão de pesquisa | Search
+`button`| Exibir o botão de pesquisa. O valor pode ser um booleano ou uma string. Quando o valor é uma string, será o texto do botão. | false
 
 ### number_format
 
-Formats a number.
+Formate um número
 
 ``` js
 <%- number_format(number, [options]) %>
 ```
 
-Option | Description | Default
+Opção | Descrição | Padrão
 --- | --- | ---
-`precision` | The precision of number. The value can be `false` or a nonnegative integer. | false
-`delimiter` | The thousands delimiter | ,
-`separator` | The separator between the fractional and integer digits. | .
+`precision` | A precisão do número. O valor pode ser `false` ou um número inteiro não negativo. | false
+`delimiter` | O delimitador de milhares | ,
+`separator` | O separador entre os dígitos fracionários e inteiros. | .
 
-**Examples:**
+**Exemplos:**
 
 ``` js
 <%- number_format(12345.67, {precision: 1}) %>
@@ -620,42 +631,42 @@ Option | Description | Default
 
 ### open_graph
 
-Inserts [Open Graph] data.
+Insere dados [Gráfico aberto].
 
 ``` js
 <%- open_graph([options]) %>
 ```
 
-Option | Description | Default
+Opção | Descrição | Padrão
 --- | --- | ---
-`title` | Page title (`og:title`) | `page.title`
-`type` | Page type (`og:type`) | blog
-`url` | Page URL (`og:url`) | `url`
-`image` | Page cover (`og:image`) | First image in the content
-`site_name` | Site name (`og:site_name`) | `config.title`
-`description` | Page description (`og:desription`) | Page excerpt or first 200 characters of the content
-`twitter_card` | Twitter card type (`twitter:card`) | summary
-`twitter_id` | Twitter ID (`twitter:creator`) |
-`twitter_site` | Twitter Site (`twitter:site`) |
-`google_plus` | Google+ profile link |
-`fb_admins` | Facebook admin ID |
-`fb_app_id` | Facebook App ID |
+`title` | Título da página (`og: title`) | `page.title`
+`tipo` | Tipo de página (`og:type`) | blog
+`url` | URL da página (`og:url`) | `url`
+`imagem` | Capa da página (`og:image`) | Primeira imagem no conteúdo
+`site_name` | Nome do site (`og:site_name`) | `config.title`
+`description`| Descrição da página (`og: desription`) | Excerto de página ou 200 caracteres do conteúdo
+`twitter_card` | Tipo de cartão do Twitter (`twitter: cartão`) | resumo
+`twitter_id` | Twitter ID (`twitter: creator`) |
+`twitter_site` | Site do Twitter (`twitter: site`) |
+`google_plus` | Link de perfil do Google+ |
+`fb_admins` | ID de administrador do Facebook |
+`fb_app_id` | ID da aplicação do Facebook |
 
 ### toc
 
-Parses all heading tags (h1~h6) in the content and inserts a table of contents.
+Analisa todas as tags de título (h1 ~ h6) no conteúdo e insere um índice.
 
 ``` js
 <%- toc(str, [options]) %>
 ```
 
-Option | Description | Default
+Opção | Descrição | Padrão
 --- | --- | ---
-`class` | Class name | toc
-`list_number` | Displays list number | true
-`max_depth` | Maximum heading depth of generated toc | 6
+`class` | Nome da classe | toc
+`list_number` | Exibe o número da lista | true
+`max_depth` | Profundidade máxima do cabeçalho gerado | 6
 
-**Examples:**
+**Exemplos:**
 
 ``` js
 <%- toc(page.content) %>

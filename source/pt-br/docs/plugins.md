@@ -37,7 +37,7 @@ Você pode usar as ferramentas oficiais fornecidas pela Hexo para acelerar o des
 - [hexo-fs]: Arquivo IO
 - [hexo-util]: Utilitários
 - [hexo-i18n]: Localização (i18n)
-- [hexo-pagination]: gerar dados de paginação
+- [hexo-pagination]: Gerar dados de paginação
 
 ### Publishing
 

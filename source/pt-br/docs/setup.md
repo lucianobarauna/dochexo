@@ -1,6 +1,6 @@
-title: Configuração
+title: Setup
 ---
-Uma vez instalado o Hexo, execute os seguintes comandos para inicializar o Hexo no alvo `<folder>`.
+Uma vez instalado o Hexo, execute os seguintes comandos para inicializar um site com Hexo em um diretório `<folder>`.
 
 ``` bash
 $ hexo init <folder>
@@ -8,7 +8,7 @@ $ cd <folder>
 $ npm install
 ```
 
-Uma vez inicializado, aqui está o aspecto da sua pasta de projeto:
+Após inicializado, o diretório do seu projeto ficará com a seguinte estrutura:
 
 ``` plain
 .
@@ -23,11 +23,11 @@ Uma vez inicializado, aqui está o aspecto da sua pasta de projeto:
 
 ### _config.yml
 
-Site [configuração](configuration.html) arquivo. Você pode configurar a maioria das configurações aqui.
+Arquivo de [configuração](configuration.html) do site. Você pode definir a maioria das configurações aqui.
 
 ### package.json
 
-Dados do aplicativo. O [EJS](http://embeddedjs.com/), [Stylus](http://learnboost.github.io/stylus/) e [Markdown](http://daringfireball.net/projects/markdown/) são renderizadores instalados por padrão. Se desejar, você pode desinstalá-los mais tarde.
+Arquivo de dados da aplicação. Os renderizadores [Markdown](http://daringfireball.net/projects/markdown/), [EJS](http://embeddedjs.com/) e [Stylus](http://learnboost.github.io/stylus/) são instalados por padrão. Se desejar, você pode desinstalá-los posteriormente.
 
 ``` json package.json
 {
@@ -53,13 +53,12 @@ Dados do aplicativo. O [EJS](http://embeddedjs.com/), [Stylus](http://learnboost
 
 ### scaffolds
 
-[Scaffold](writing.html#Scaffolds) pasta. Quando você cria uma nova postagem, a Hexo baseia o novo arquivo no scaffold.
+Diretório de [Scaffold](writing.html#Scaffolds). Quando você cria uma nova postagem, o Hexo cria um arquivo baseado no scaffold.
 
 ### source
 
-A pasta `source`. É aqui que você coloca o conteúdo do seu site. Hexo ignora arquivos ocultos e arquivos ou pastas cujos nomes são prefixados com `_` (sublinhado) - exceto a pasta `_posts`. Os arquivos renderizáveis (por exemplo, Markdown, HTML) serão processados e colocados na pasta `public`, enquanto outros arquivos serão simplesmente copiados.
+Diretório de conteúdo. É aqui que você coloca o conteúdo do seu site. O Hexo ignora arquivos ocultos e arquivos ou diretórios cujos nomes são prefixados com `_` (sublinhado) - exceto o diretório `_posts`. Os arquivos renderizáveis (arquivos Markdown e HTML por exemplo) serão processados e colocados no diretório `public`, enquanto outros arquivos serão simplesmente copiados.
 
+### themes
 
-### Temas
-
-A pasta [Theme](themes.html). O Hexo gera um site estático combinando os conteúdos do site com o tema.
+Diretório de [Temas](themes.html). O Hexo gera um site estático combinando o conteúdo do site com o tema.

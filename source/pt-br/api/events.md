@@ -43,7 +43,6 @@ Emitido antes do início do processamento. Este evento retorna um caminho que re
 
 ### processAfter
 
-Emitted after processing finishes. This event returns a path representing the root directory of the box.
 Emitido depois do processamento finalizado. Este evento retorna um caminho que representa o diretório raiz do box.
 
 ### ready

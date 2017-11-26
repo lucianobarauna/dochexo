@@ -10,13 +10,13 @@ language:
 - en
 ```
 
-### Arquivo de linguagens
+### Arquivo de Idiomas
 
-Os arquivos de idioma podem ser arquivos YAML ou JSON. Você deve inseri-los na pasta `languages` no tema. Há suporte para o [printf format] (https://github.com/alexei/sprintf.js) em language files.
+Os arquivos de idioma podem ser arquivos YAML ou JSON. Você deve inseri-los no diretório `languages` de `theme`. Há suporte para o [printf format](https://github.com/alexei/sprintf.js) nos arquivos de idioma.
 
 ### Templates
 
-Use `__` ou `_p` helpers em modelos para obter as cadeias traduzidas. O primeiro é para uso normal e o último é para strings plurais. Por exemplo:
+Use os helpers `__` ou `_p` nos templates para traduzir as strings. O primeiro é para uso normal e o segundo é para strings no plural. Por exemplo:
 
 ``` yaml en.yml
 index:
@@ -36,9 +36,9 @@ index:
 // 3 videos
 ```
 
-### Path
+### Caminhos
 
-Você pode definir o idioma das páginas em front-matter, ou modificar a configuração `i18n_dir` em `_config.yml` para habilitar a detecção automática pela Hexo.
+Você pode definir o idioma das páginas no front-matter ou modificar a configuração `i18n_dir` no arquivo `_config.yml` para habilitar a detecção automática pelo Hexo.
 
 ``` yaml
 i18n_dir: :lang
@@ -52,4 +52,4 @@ O valor padrão da configuração `i18n_dir` é `:lang`, o que significa que o H
 /zh-tw/index.html => zh-tw
 ```
 
-A string só será servida como um idioma quando o arquivo de idioma existir. Então, 'arquivos' em `/archives/index.html` (exemplo 2) não serão atendidos como um idioma.
+A string só será servida como um idioma quando o arquivo de idioma existir. Então, `archives` em `/archives/index.html` (exemplo 2) não será servida como um idioma.

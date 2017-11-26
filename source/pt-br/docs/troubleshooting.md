@@ -90,7 +90,7 @@ $ npm install hexo --no-optional
 ```
 Veja a issue [#1326](https://github.com/hexojs/hexo/issues/1326#issuecomment-113871796) no Github.
 
-## Interando o Modelo de Dados em Jade ou Swig
+## Iterando o Modelo de Dados em Jade ou Swig
 
 A Hexo usa [Warehouse] para o seu modelo de dados. Ele não é um array, então você pode ter que transformar objetos em iteráveis.
 

@@ -1,8 +1,8 @@
-title: Arquivo de dados
+title: Arquivo de Dados
 ---
-Às vezes, você pode precisar usar alguns dados em modelos que não estão diretamente disponíveis em suas postagens, ou você deseja reutilizar os dados em outro lugar. Para esses casos de uso, o Hexo 3 introduziu os novos **arquivos de dados**. Esse recurso carrega arquivos YAML ou JSON na pasta `source/_data` para que você possa usá-los em seu site.
+Às vezes, você pode precisar usar alguns dados em templates que não estão diretamente disponíveis em suas postagens, ou ainda, você deseja reutilizar os dados em um outro lugar. Para esses casos de uso, o Hexo 3 introduziu os novos **Data files** (arquivos de dados). Este recurso carrega arquivos YAML ou JSON no diretório `source/_data` para que você possa usá-los em seu site.
 
-Por exemplo, adicione `menu.yml` na pasta `source / _data`.
+Por exemplo, adicione `menu.yml` no diretório `source/_data`.
 
 ``` yaml
 Home: /
@@ -10,7 +10,7 @@ Gallery: /gallery/
 Archives: /archives/
 ```
 
-E você pode usá-los em modelos:
+E você pode usá-los nos templates:
 
 ```
 <% for (var link in site.data.menu) { %>

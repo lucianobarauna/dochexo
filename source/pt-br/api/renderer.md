@@ -1,6 +1,6 @@
 title: Renderizador
 ---
-Um renderizador é utilizado para renderizar conteúdos.
+Um renderizador é utilizado para render conteúdos.
 
 ## Resumo
 

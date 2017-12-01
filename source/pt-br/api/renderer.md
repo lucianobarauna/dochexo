@@ -16,7 +16,7 @@ Argumento | Descrição
 `output` | Extensão do arquivo de saída (caixa baixa, sem o `.` inicial)
 `sync` | Modo de sincronização
 
-Dois argumentos devem ser passados para a função de renderização:
+Dois argumentos devem ser passados para a função renderer:
 
 Argumento | Descrição
 --- | ---

@@ -1,10 +1,10 @@
 title: Rendering
 ---
-There are two methods for rendering files or strings in Hexo: the asynchronous `hexo.render.render` method and the synchronous `hexo.render.renderSync` method. Unsurprisingly, the two methods are very similar so only the asynchronous `hexo.render.render` will be further discussed in the below paragraphs.
+Existem dois métodos para renderizar arquivos ou strings no Hexo: o método `hexo.render.render` assíncrono e o método` hexo.render.renderSync` síncrono. Os dois métodos são bastante semelhantes, desta forma, apenas o método `hexo.render.render` assíncrono será um pouco mais discutido nos parágrafos abaixo.
 
-## Render a String
+## Renderizar uma String
 
-When rendering a string, you must specify an `engine` to let Hexo know which rendering engine it should use.
+Ao renderizar uma string, você deve especificar uma `engine` para permitir que o Hexo conheça o mecanismo de renderização que deverá ser  usado.
 
 ``` js
 hexo.render.render({text: 'example', engine: 'swig'}).then(function(result){
@@ -12,9 +12,9 @@ hexo.render.render({text: 'example', engine: 'swig'}).then(function(result){
 });
 ```
 
-## Render a File
+## Renderizar um Arquivo
 
-When rendering a file, it's not necessary to specify an `engine` because Hexo will detect the relevant rendering engine automatically based on the extension of the file. Of course, you are also allowed to explicitly define the `engine`.
+Ao renderizar um arquivo, não é necessário especificar uma `engine` porque o Hexo detectará automaticamente o mecanismo de renderização mais apropriado com base na extensão do arquivo. Mas se for a caso, você também pode definir explicitamente a `engine'.
 
 ``` js
 hexo.render.render({path: 'path/to/file.swig'}).then(function(result){
@@ -22,9 +22,9 @@ hexo.render.render({path: 'path/to/file.swig'}).then(function(result){
 });
 ```
 
-## Render Options
+## Opções de Renderização
 
-You can pass in an options object as the second argument.
+Você pode passar um conjunto de opções em formato de objeto no segundo argumento.
 
 ``` js
 hexo.render.render({text: ''}, {foo: 'foo'}).then(function(result){
@@ -32,9 +32,9 @@ hexo.render.render({text: ''}, {foo: 'foo'}).then(function(result){
 });
 ```
 
-## after_render Filters
+## Filtros after_render
 
-When rendering is complete, Hexo will execute the corresponding `after_render` filters. For example, we can use this feature to implement a JavaScript minifier.
+Quando a renderização estiver completa, o Hexo executará os filtros `after_render` correspondentes. Por exemplo, podemos usar este recurso para implementar um minificador para arquivos JavaScript.
 
 ``` js
 var UglifyJS = require('uglify-js');
@@ -45,18 +45,18 @@ hexo.extend.filter.register('after_render:js', function(str, data){
 });
 ```
 
-## Check Whether a File is Renderable
+## Verificar se um Arquivo é Renderizável
 
-You can use the `isRenderable` or `isRenderableSync` method to check whether a file path is renderable. Only when a corresponding renderer has been registered will this method return true.
+Você pode usar o método `isRenderable` ou` isRenderableSync` para verificar se um caminho de arquivo é renderizável. O retorno do método será `true` apenas se um renderizador correspondente for registrado.
 
 ``` js
 hexo.render.isRenderable('layout.swig') // true
 hexo.render.isRenderable('image.png') // false
 ```
 
-## Get the Output Extension
+## Obter a Extensão de Saída
 
-Use the `getOutput` method to get the extension of the rendered output. If a file is not renderable, the method will return an empty string.
+Use o método `getOutput` para obter a extensão da saída renderizada. Se um arquivo não foi renderizado, o método retornará uma string vazia.
 
 ``` js
 hexo.render.getOutput('layout.swig') // html

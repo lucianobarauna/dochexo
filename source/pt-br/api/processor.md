@@ -1,8 +1,8 @@
 title: Processor
 ---
-A processor is used to process source files in the `source` folder.
+Um `processor` é utilizado para processar os arquivos fonte contidos na pasta `source`.
 
-## Synopsis
+## Resumo
 
 ``` js
 hexo.extend.processor.register(rule, function(file){
@@ -10,4 +10,4 @@ hexo.extend.processor.register(rule, function(file){
 });
 ```
 
-For more info, see [box](box.html).
+Mais informações podem ser encontradas em [box](box.html).

@@ -46,7 +46,7 @@ Inicia um servidor local. Por padrão, o local é `http://localhost:4000/`.
 
 Opção | Descrição
 --- | ---
-`-p`, `--port` | Substituir a porta padrão
+`-p`, `--port` | Substitui a porta padrão
 `-s`, `--static` | Somente serve arquivos estáticos
 `-l`, `--log` | Ativar logger. Substitui o formato do logger.
 

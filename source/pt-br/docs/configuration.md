@@ -36,7 +36,7 @@ Configuração | Descriçao | Padrão
 `category_dir` | Diretório de categorias | `categories`
 `code_dir` | Incluir diretório de código | `downloads/code`
 `i18n_dir` | Diretório i18n  | `:lang`
-`skip_render` | Caminhos que não devem ser renderizados. Você pode usar [expressões regulares](https://github.com/isaacs/minimatch) para fazer correspondência de caminho |
+`skip_render` | Caminhos que não devem ser renderizados. Você pode usar [expressões glob](https://github.com/isaacs/minimatch) para fazer correspondência de caminho |
 
 ### Escrevendo
 
@@ -44,13 +44,13 @@ Configuração | Descriçao | Padrão
 --- | --- | ---
 `new_post_name` | O formato do nome do arquivo para novas postagens | `:title.md`
 `default_layout` | Layout padrão | `post`
-`titlecase` | Transformar títulos em caso de título? | `false`
-`external_link` | Abra links externos na nova guia? | `true`
+`titlecase` | Transformar títulos em "title case" | `false`
+`external_link` | Abrir links externos na nova guia? | `true`
 `filename_case` | Transforme nomes de arquivos para `1` minúsculas; `2` maiúscula | `0`
 `render_drafts` | Exibir rascunhos? | `false`
 `post_asset_folder` | Ativar a [pasta asset](asset-folders.html)? | `false`
-`relative_link` | Faça links para a pasta raiz? | `false`
-`future` | Exibir postagens futuras?? | `true`
+`relative_link` | Fazer os links relativos a pasta raiz? | `false`
+`future` | Exibir postagens futuras? | `true`
 `highlight` | Configurações de bloco de código |
 
 ### Category & Tag
@@ -58,12 +58,12 @@ Configuração | Descriçao | Padrão
 Configuração | Descriçao | Padrão
 --- | --- | ---
 `default_category` | Categoria padrão | `uncategorized`
-`category_map` | Categoria de slugs |
+`category_map` | Categoria slugs |
 `tag_map` | Tag slugs |
 
 ### Data / Formato de hora
 
-Hexo usa [Moment.js](http://momentjs.com/) para processar datas.
+Hexo usa o [Moment.js](http://momentjs.com/) para processar datas.
 
 Configuração | Descriçao | Padrão
 --- | --- | ---
@@ -79,7 +79,7 @@ Configuração | Descriçao | Padrão
 
 ### Extensões
 
-Configuração | Descriçao
+Configuração | Descrição
 --- | ---
 `theme` | Nome do tema. `false` desabilita o tema
 `deploy` | Configuração de implantação
@@ -92,7 +92,7 @@ No arquivo de configuração, defina a chave de include/exlude para que o hexo p
 Configuração | Descriçao
 --- | ---
 `include` | Hexo ignora os arquivos e pastas ocultos, mas configurar este campo fará com que o Hexo os processe também
-`exclude` | O processo Hexo ignorará a lista de arquivos abaixo deste campo
+`exclude` | O Hexo ignorará a lista de arquivos abaixo deste campo
 
 
 Sample:
@@ -105,7 +105,7 @@ exclude:
 ```
 
 ### Usango outras alternativas de configuração
-Um caminho de arquivo de configuração personalizado pode ser especificado adicionando o sinalizador `--config` aos comandos `hexo` com um caminho para um arquivo de configuração YAML ou JSON alternativo ou uma lista separada por vírgulas (sem espaços) de múltiplos YAMLs ou JSON arquivos.
+Um caminho de arquivo de configuração personalizado pode ser especificado adicionando o sinalizador `--config` aos comandos `hexo` com um caminho para um arquivo de configuração YAML ou JSON alternativo ou uma lista separada por vírgulas (sem espaços) de múltiplos YAMLs ou arquivos JSON.
 
 ``` bash
 # use 'custom.yml' in place of '_config.yml'
@@ -115,7 +115,8 @@ $ hexo server --config custom.yml
 $ hexo server --config custom.yml,custom2.json
 ```
 
-Uso de vários arquivos combina todos os arquivos de configuração e salva as configurações mescladas para `_multiconfig.yml`.
-Os valores posteriores prevalecem. Ele funciona com qualquer número de arquivos JSON e YAML com objetos arbitrariamente profundos. Observe que **nenhum espaço é permitido na lista**.
+Ao usar multiplos arquivos de configuração, todos serão mesclados em um único arquivo  `_multiconfig.yml`.
 
-Por exemplo, no exemplo acima se `foo: bar` estiver em `custom.yml`, mas `"foo": "dinosaur"` está em `custom2.json`, `_multiconfig.yml` conterá `foo: dinosaur`.
+Os valores que aparecerem por último sobrescrevem os primeiros. Ele funciona com qualquer número de arquivos JSON e YAML com objetos arbitrariamente profundos. Observe que **espaços não são permitidos entre os nomes dos arquivos**.
+
+No exemplo acima se `foo: bar` estiver em `custom.yml`, mas `"foo": "dinosaur"` está em `custom2.json`, `_multiconfig.yml` conterá `foo: dinosaur`.

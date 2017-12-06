@@ -13,7 +13,7 @@ Inicializa um website. Se não existir `folder`, o Hexo configurará o site no d
 $ hexo new [layout] <title>
 ```
 
-Cria um novo artigo. Se nenhum `layout` for fornecido, o Hexo usará o `default_layout` de [_config.yml](configuration.html). e o `title` contiver espaços, rode-o com aspas.
+Cria um novo artigo. Se nenhum `layout` for fornecido, o Hexo usará o `default_layout` do [_config.yml](configuration.html). E o `title` contiver espaços, rode-o com aspas.
 
 ## generate
 

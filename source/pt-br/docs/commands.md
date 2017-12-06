@@ -122,7 +122,7 @@ Desativa o carregamento de plugins e scripts. Tente isso se você encontrar prob
 $ hexo --debug
 ```
 
-Registra mensagens detalhadas para o terminal e para  `debug.log`. Tente isso se você encontrar algum problema com o Hexo. Se você vir erros, por favor [crie uma GitHub issue](https://github.com/hexojs/hexo/issues/new).
+Registra mensagens detalhadas para no terminal e no arquivo  `debug.log`. Tente isso se você encontrar algum problema com o Hexo. Se você vir erros, por favor [crie uma GitHub issue](https://github.com/hexojs/hexo/issues/new).
 
 ### Modo silent
 

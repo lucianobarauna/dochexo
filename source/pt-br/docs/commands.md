@@ -138,7 +138,7 @@ Silencia a saída para o terminal.
 $ hexo --config custom.yml
 ```
 
-Usa um arquivo de configuração personalizado (em vez de `_config.yml`). Aambém aceita uma lista separada por vírgulas (sem espaços) de arquivos de configuração JSON ou YAML que combinará os arquivos em um único `_multiconfig.yml`.
+Usa um arquivo de configuração personalizado (em vez de `_config.yml`). Também aceita uma lista separada por vírgulas (sem espaços) de arquivos de configuração JSON ou YAML que serão combinados em um único arquivo `_multiconfig.yml`.
 
 ``` bash
 $ hexo --config custom.yml,custom2.json

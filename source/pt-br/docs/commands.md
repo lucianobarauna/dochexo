@@ -5,7 +5,7 @@ title: Commands
 ``` bash
 $ hexo init [folder]
 ```
-Inicializa um website. Se não existir `folder`, o Hexo configurará o sita no diretório atual.
+Inicializa um website. Se não existir `folder`, o Hexo configurará o site no diretório atual.
 
 ## new
 

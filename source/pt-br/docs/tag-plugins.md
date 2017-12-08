@@ -10,7 +10,7 @@ Perfeito para adicionar citações à sua postagem, com informações autorais, 
 
 ```
 {% blockquote [author[, source]] [link] [source_link_title] %}
-conteúdo
+content
 {% endblockquote %}
 ```
 
@@ -40,7 +40,7 @@ Do not just seek happiness for yourself. Seek happiness for all. Through kindnes
 Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.
 {% endblockquote %}
 
-**Citação de um twitter**
+**Citação do twitter**
 
 ```
 {% blockquote @DevDocs https://twitter.com/devdocs/status/356095192085962752 %}
@@ -103,7 +103,7 @@ alert('Hello World!');
 [rectangle setX: 10 y: 10 width: 20 height: 20];
 {% endcodeblock %}
 
-**Adicionando uma legenda ao código**
+**Adicionando uma legenda ao código, e uma url**
 
 ```
 {% codeblock Array.map %}
@@ -213,7 +213,7 @@ Insere um vídeo do Vimeo.
 {% vimeo video_id %}
 ```
 
-## Incluir postagens
+## Inclui postagens
 
 Inclua links para outras postagens.
 
@@ -224,7 +224,7 @@ Inclua links para outras postagens.
 
 ## Incluir Assets
 
-Incluir posts ativos.
+Inclui arquivos do post.
 
 ```
 {% asset_path slug %}

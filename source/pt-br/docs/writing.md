@@ -31,9 +31,9 @@ Placeholder | Descrição
 --- | ---
 `:title` | Título do post (minúsculas, com espaços substituídos por hyphens)
 `:year` | Ano criado, ex: `2015`
-`:month` | Mês criado (zeros à esquerda), ex: `04`
+`:month` | Mês criado (com zeros à esquerda), ex: `04`
 `:i_month` | Mês criado (sem zeros), ex: `4`
-`:day` | Dia criado (zeros à esquerda), ex: `07`
+`:day` | Dia criado (com zeros à esquerda), ex: `07`
 `:i_day` | Dia criado (sem zeros à esquerda), ex: `7`
 
 ### Rascunhos
@@ -54,7 +54,7 @@ Ao criar postagens, a Hexo irá construir arquivos com base no arquivo correspon
 $ hexo new photo "My Gallery"
 ```
 
-Quando você executa este comando, o Hexo tentará encontrar `photo.md` na pasta `scaffolds` e criar a postagem com base nela. Os seguintes espaços reservados estão disponíveis em andaimes:
+Quando você executa este comando, o Hexo tentará encontrar `photo.md` na pasta `scaffolds` e criar a postagem com base nela. Os seguintes espaços reservados estão disponíveis em scaffolds:
 
 Placeholder | Descrição
 --- | ---

@@ -2,7 +2,7 @@ title: Servidor
 ---
 ## [hexo-server]
 
-Com o lançamento do Hexo 3, o servidor foi separado do módulo principal. Para começar a usar o servidor, primeiro você deve instalar [hexo-server].
+Com o lançamento do Hexo 3, o servidor foi separado do módulo principal. Para começar a usar o servidor, primeiro você deve instalar o [hexo-server].
 
 ``` bash
 $ npm install hexo-server --save

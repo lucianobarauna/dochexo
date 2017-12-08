@@ -60,4 +60,4 @@ Placeholder | Descrição
 --- | ---
 `layout` | Layout
 `title` | Title
-`date` | Data criada no arquivo
+`date` | Data da criação do arquivo

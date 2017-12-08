@@ -1,7 +1,6 @@
 title: Implantação
 ---
-
-A Hexo fornece uma estratégia de implantação rápida e fácil. Você só precisa de um único comando para implantar seu site em seus servidores.
+O Hexo fornece uma estratégia de implantação (deployment) rápida e fácil. Você só precisa de um único comando para implantar seu site no servidor.
 
 ``` bash
 $ hexo deploy
@@ -14,7 +13,7 @@ deploy:
   type: git
 ```
 
-Você pode usar múltiplos implementadores. O Hexo executará cada implementador em ordem.
+Você pode implantar o site em mais de um servidor. O Hexo executará cada implantação na ordem da declaração.
 
 ``` yaml
 deploy:
@@ -26,13 +25,13 @@ deploy:
 
 ## Git
 
-Instale [hexo-deployer-git].
+Instale o pacote [hexo-deployer-git].
 
 ``` bash
 $ npm install hexo-deployer-git --save
 ```
 
-Editando configurações.
+Editando as configurações.
 
 ``` yaml
 deploy:
@@ -42,22 +41,21 @@ deploy:
   message: [message]
 ```
 
-Opções | Descrição
+Opção | Descrição
 --- | ---
-`repo` | GitHub/Bitbucket/Coding/GitLab URL do repositório
-`branch` | Nome da branch. O implementador detectará o branch automaticamente se estiver usando o GitHub or GitCafe.
-`message` | Customizando a mensagem de commit (Padrão é `Site updated: {% raw %}{{ now('YYYY-MM-DD HH:mm:ss') }}{% endraw %}`)
-
+`repo` | URL do repositório GitHub/Bitbucket/Coding/GitLab
+`branch` | Nome do branch. O implantador detectará o branch automaticamente se estiver usando o GitHub ou GitCafe.
+`message` | Customiza a mensagem de commit (O padrão é `Site updated: {% raw %}{{ now('YYYY-MM-DD HH:mm:ss') }}{% endraw %}`)
 
 ## Heroku
 
-Instale [hexo-deployer-heroku].
+Instale o pacote [hexo-deployer-heroku].
 
 ``` bash
 $ npm install hexo-deployer-heroku --save
 ```
 
-Editando configurações.
+Editando as configurações.
 
 ``` yaml
 deploy:
@@ -66,20 +64,20 @@ deploy:
   message: [message]
 ```
 
-Option | Description
+Opção | Descrição
 --- | ---
-`repo`, `repository` | Heroku URL do repositório
-`message` | Customizando a mensagem de commit (Padão é: `Site updated: {% raw %}{{ now('YYYY-MM-DD HH:mm:ss') }}{% endraw %}`)
+`repo`, `repository` | URL do repositório no Heroku
+`message` | Customiza a mensagem de commit (O padão é: `Site updated: {% raw %}{{ now('YYYY-MM-DD HH:mm:ss') }}{% endraw %}`)
 
 ## Rsync
 
-Instale [hexo-deployer-rsync].
+Instale o pacote [hexo-deployer-rsync].
 
 ``` bash
 $ npm install hexo-deployer-rsync --save
 ```
 
-Editando configurações.
+Editando as configurações.
 
 ``` yaml
 deploy:
@@ -99,19 +97,19 @@ Opção | Descrição | Padão
 `user` | Nome de usuário |
 `root` | Diretório raiz do host remoto |
 `port` | Porta | 22
-`delete` | Excluir arquivos antigos no host remoto | true
-`verbose` | Exibir mensagens detalhadas | true
-`ignore_errors` | Ignorar erros | false
+`delete` | Exclui arquivos antigos no host remoto | true
+`verbose` | Exibi mensagens detalhadas | true
+`ignore_errors` | Ignora erros | false
 
 ## OpenShift
 
-Instale [hexo-deployer-openshift].
+Instale o pacote [hexo-deployer-openshift].
 
 ``` bash
 $ npm install hexo-deployer-openshift --save
 ```
 
-Editar configurações.
+Editando as configurações.
 
 ``` yaml
 deploy:
@@ -120,20 +118,20 @@ deploy:
   message: [message]
 ```
 
-Opções | Descrição
+Opção | Descrição
 --- | ---
-`repo` | OpenShift URL do repositório
-`message` | Customizando a menssagem de commit (Padrão é `Site updated: {% raw %}{{ now('YYYY-MM-DD HH:mm:ss') }}{% endraw %}`)
+`repo` | URL do repositório no OpenShift
+`message` | Customiza a mensagem de commit (O padrão é `Site updated: {% raw %}{{ now('YYYY-MM-DD HH:mm:ss') }}{% endraw %}`)
 
 ## FTPSync
 
-Instale [hexo-deployer-ftpsync].
+Instale o pacote [hexo-deployer-ftpsync].
 
 ``` bash
 $ npm install hexo-deployer-ftpsync --save
 ```
 
-Editando configurações.
+Editando as configurações.
 
 ``` yaml
 deploy:
@@ -148,27 +146,26 @@ deploy:
   verbose: [true|false]
 ```
 
-Opções | Descrição | Padrão
+Opção | Descrição | Padrão
 --- | --- | ---
 `host` | Endereço do host remoto |
 `user` | Nome de usuário |
 `pass` | Senha |
 `remote` | Diretório raiz do host remoto | `/`
 `port` | Porta | 21
-`ignore` | Ignore os arquivos no host ou no controle remoto  |
+`ignore` | Ignora os arquivos no host remoto |
 `connections` | Número de conexões | 1
-`verbose` | Exibir mensagens detalhadas | false
-
+`verbose` | Exibi mensagens detalhadas | false
 
 ## SFTP
 
-Instale [hexo-deployer-sftp]. Implementa o site via SFTP, permitindo conexões sem senhas usando ssh-agent.
+Instale o pacote [hexo-deployer-sftp]. Implantação do site via SFTP, permitindo conexões sem senhas usando "ssh-agent".
 
 ``` bash
 $ npm install hexo-deployer-sftp --save
 ```
 
-Editando configurações.
+Editando as configurações.
 
 ``` yaml
 deploy:
@@ -190,18 +187,18 @@ Opção | Descrição | Padrão
 `user` | Nome de usuário |
 `pass` | Senha |
 `remotePath` | Diretório raiz do host remoto | `/`
-`port` | Porto | 22
-`privateKey` | Caminho para uma chave privada do ssh |
+`port` | Porta | 22
+`privateKey` | Caminho para uma chave ssh privada |
 `passphrase` | Frase secreta opcional para a chave privada |
-`agent` | Caminho para o ssh do agente ssh | `$SSH_AUTH_SOCK`
+`agent` | Caminho para o socket do agente ssh | `$SSH_AUTH_SOCK`
 
+## Outros Métodos
 
-## Outros metódos
-
-Todos os arquivos gerados são salvos na pasta `public`. Você pode copiá-los para onde quiser.
+Todos os arquivos gerados são salvos no diretório `public`. Você pode copiá-los para onde quiser.
 
 [hexo-deployer-git]: https://github.com/hexojs/hexo-deployer-git
 [hexo-deployer-heroku]: https://github.com/hexojs/hexo-deployer-heroku
 [hexo-deployer-rsync]: https://github.com/hexojs/hexo-deployer-rsync
 [hexo-deployer-openshift]: https://github.com/hexojs/hexo-deployer-openshift
 [hexo-deployer-ftpsync]: https://github.com/hexojs/hexo-deployer-ftpsync
+[hexo-deployer-sftp]: https://github.com/lucascaro/hexo-deployer-sftp

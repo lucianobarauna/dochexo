@@ -23,7 +23,7 @@ Configuração | Descrição | Default
 --- | --- | ---
 `layout` | Layout |
 `title` | Title |
-`date` | Data de publicação | Data criada no arquivo
+`date` | Data de criação | Data criada no arquivo
 `updated` | Data atualizada | Data atualizada do arquivo
 `comments` | Habilita o recurso de comentário para a postagem | true
 `tags` | Tags (Não disponível para páginas)

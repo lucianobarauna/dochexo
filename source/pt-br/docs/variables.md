@@ -40,7 +40,7 @@ Variáveis | Descrição | Tipo
 `page.full_source` | Caminho completo do arquivo de origem | `string`
 `page.path` | O URL do artigo sem URL de raiz. Usamos geralmente `url_for(page.path)` no tema. | `string`
 `page.permalink` | URL completo do artigo | `string`
-`page.prev` | O post anterior, `null` se o post for o primeiro post | ???
+`page.prev` | O post anterior, `null` se for o primeiro post | ???
 `page.next` | O próximo post, `null` se for o primeiro post | ???
 `page.raw` | Os dados brutos do artigo | ???
 `page.photos` | As fotos do artigo (Usado em posts da galeria) | array de ???

@@ -1,7 +1,7 @@
 title: Front-matter
 ---
 
-Front-matter é um bloco de YAML ou JSON no início do arquivo que é usado para configurar configurações para suas escritas. Front-matter é terminado por três traços quando escrito em YAML ou três ponto-e-vírgula quando escrito em JSON.
+Front-matter é um bloco de YAML ou JSON no início do arquivo que é usado para configurar variaveis no seu projeto. Front-matter é finalizado por três traços quando escrito em YAML ou três ponto-e-vírgula quando escrito em JSON.
 
 **YAML**
 ``` yaml

@@ -1,60 +1,60 @@
 title: Posts
 ---
-## Create a Post
+## Criar um Post
 
 ``` js
 hexo.post.create(data, replace);
 ```
 
-Argument | Description
+Argumento | Descrição
 --- | ---
-`data` | Data
-`replace` | Replace existing files
+`data` | Dados
+`replace` | Substitui arquivos existentes
 
-The attributes of a post can be defined in `data`. The table below is not exhaustive. Additional attributes may be appended to the front-matter.
+Os atributos de um post podem ser definidos em `data`. A tabela abaixo inclui as informações mais importantes. Atributos adicionais podem vir a ser agregados ao index. 
 
-Data | Description
+Variável | Descrição
 --- | ---
-`title` | Title
+`title` | Título
 `slug` | URL
-`layout` | Layout. Defaults to the `default_layout` setting.
-`path` | Path. Hexo builds the post path based on the `new_post_path` setting by default.
-`date` | Date. Defaults to the current date.
+`layout` | Layout. Usa a configuração `default_layout` como padrão.
+`path` | Caminho. Por padrão, Hexo constrói o caminho do post de acordo parâmetro `new_post_path`.
+`date` | Data. Utiliza a data atual como padrão.
 
-## Publish a Draft
+## Publicar um Rascunho
 
 ``` js
 hexo.post.publish(data, replace);
 ```
 
-Argument | Description
+Argumento | Descrição
 --- | ---
-`data` | Data
-`replace` | Replace existing files
+`data` | Dados
+`replace` | Substitui arquivos existentes
 
-The attributes of a post can be defined in `data`. The table below is not exhaustive. Additional attributes may be appended to the front-matter.
+Os atributos de um post podem ser definidos em `data`. A tabela abaixo inclui as informações mais importantes. Atributos adicionais podem vir a ser agregados ao index.
 
-Data | Description
+Dados | Descrição
 --- | ---
-`slug` | File name (Required)
-`layout` | Layout. Defaults to the `default_layout` setting.
+`slug` | Nome do arquivo (Campo obrigatório)
+`layout` | Layout. Usa a configuração `default_layout` como padrão.
 
-## Render
+## Renderizar
 
 ``` js
 hexo.post.render(source, data);
 ```
 
-Argument | Description
+Argumento | Descrição
 --- | ---
-`source` | Full path of a file (Optional)
-`data` | Data
+`source` | Caminho completo de um arquivo (Opcional)
+`data` | Dados
 
-The data must contain the `content` attribute. If not, Hexo will try to read the original file. The execution steps of this function are as follows:
+`data` deve conter o atributo `content`. Caso não inclua, Hexo tentará carregar o arquivo inicial. As etapas de execução dessa função são listadas abaixo: 
 
-- Execute `before_post_render` filters
-- Render with Markdown or other renderers (depending on the extension name)
-- Render with [Nunjucks]
-- Execute `after_post_render` filters
+- Executa os filtros de `before_post_render`
+- Renderiza utilizando Markdown ou outros renderizadores (dependendo da extensão do nome)
+- Renderiza utilizando [Nunjucks]
+- Executa os filtros de `after_post_render`
 
 [Nunjucks]: http://mozilla.github.io/nunjucks/

@@ -1,10 +1,10 @@
 title: Helper
 ---
-Um helper facilita a adição de snippets aos seus templates. Recomendamos usar helpers em vez de templates quando estiver lidando com código mais complicado.
+A helper makes it easy to quickly add snippets to your templates. We recommend using helpers instead of templates when you're dealing with more complicated code.
 
-Os Helpers não podem ser acessados nos arquivos de `source`.
+Helpers can not be accessed from `source` files.
 
-## Resumo
+## Synopsis
 
 ``` js
 hexo.extend.helper.register(name, function(){
@@ -12,7 +12,7 @@ hexo.extend.helper.register(name, function(){
 });
 ```
 
-## Exemplo
+## Example
 
 ``` js
 hexo.extend.helper.register('js', function(path){

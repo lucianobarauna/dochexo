@@ -1,12 +1,12 @@
 title: Tag Plugins
 ---
-As Tag Plugins são diferentes das tags de postagem. Elas são portadas pela Octopress e fornecem uma maneira útil para você adicionar rapidamente conteúdo específico às suas postagens.
+Os plugins de tags são diferentes das tags de postagem. Eles são portados pela Octopress e fornecem uma maneira útil para você adicionar rapidamente conteúdo específico às suas postagens.
 
-## Bloco de Citação
+## Block Quote
 
-Perfeito para adicionar citações à sua postagem, com informações opcionais de autor, fontes e título.
+Perfeito para adicionar citações à sua postagem, com informações autorais, de origem e de título opcionais.
 
-**Alias:** quote (citação)
+**Alias:** quote
 
 ```
 {% blockquote [author[, source]] [link] [source_link_title] %}
@@ -16,7 +16,7 @@ content
 
 ### Exemplos
 
-**Sem argumentos. Bloco de citação simples.**
+**Sem argumentos. Simples blockquote.**
 
 ```
 {% blockquote %}
@@ -64,11 +64,12 @@ Every interaction is both precious and an opportunity to delight.
 Every interaction is both precious and an opportunity to delight.
 {% endblockquote %}
 
-## Bloco de Código
+## Bloco de código
 
 Funcionalidade útil para adicionar trechos de código à sua postagem.
 
-**Alias:** code (Código-fonte)
+
+**Alias:** code
 
 ```
 {% codeblock [title] [lang:language] [url] [link text] %}
@@ -90,7 +91,7 @@ alert('Hello World!');
 alert('Hello World!');
 {% endcodeblock %}
 
-**Em uma linguagem específica**
+**Linguagem específica**
 
 ```
 {% codeblock lang:objc %}
@@ -114,7 +115,6 @@ array.map(callback[, thisArg])
 array.map(callback[, thisArg])
 {% endcodeblock %}
 
-
 **Adicionando uma legenda ao código, e uma url**
 
 ```
@@ -129,9 +129,9 @@ _.compact([0, 1, false, 2, '', 3]);
 => [1, 2, 3]
 {% endcodeblock %}
 
-## Bloco de Código com Backtick
+## Bloco de Código de Backtick
 
-Isso é idêntico ao usar um bloco de código, mas usa três backticks (acentos grave) para delimitar o bloco.
+Isso é idêntico ao usar um bloco de código, mas usa três backticks para delimitar o bloco.
 
 {% raw %}
 &#96`` [language] [title] [url] [link text]
@@ -141,7 +141,7 @@ code snippet
 
 ## Pull Quote
 
-Para adicionar pull quotes (citações destacadas) em sua postagem:
+Para adicionar dicas sobre as suas postagens:
 
 ```
 {% pullquote [class] %}
@@ -151,7 +151,7 @@ content
 
 ## jsFiddle
 
-Para incorporar um snippet (trecho de código) do jsFiddle:
+Para incorporar um snippet jsFiddle:
 
 ```
 {% jsfiddle shorttag [tabs] [skin] [width] [height] %}
@@ -159,7 +159,7 @@ Para incorporar um snippet (trecho de código) do jsFiddle:
 
 ## Gist
 
-Para incorporar um snippet (trecho de código) do Gist:
+Para incorporar um trecho Gist:
 
 ```
 {% gist gist_id [filename] %}
@@ -189,9 +189,9 @@ Insere um link com o atributo `target="_blank"`.
 {% link text url [external] [title] %}
 ```
 
-## Incluir Código
+## Incluir código
 
-Insere trechos de código no diretório `source/downloads/code`.
+Insere fragmentos de código na pasta `source/downloads/code`.
 
 ```
 {% include_code [title] [lang:language] path/to/file %}
@@ -213,10 +213,9 @@ Insere um vídeo do Vimeo.
 {% vimeo video_id %}
 ```
 
-
 ## Inclui postagens
 
-Incluir links para outras postagens.
+Inclua links para outras postagens.
 
 ```
 {% post_path slug %}

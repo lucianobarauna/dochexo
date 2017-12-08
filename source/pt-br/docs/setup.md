@@ -1,6 +1,6 @@
-title: Setup
+title: Configuração
 ---
-Uma vez instalado o Hexo, execute os seguintes comandos para inicializar um site com Hexo em um diretório `<folder>`.
+Uma vez instalado o Hexo, execute os seguintes comandos para inicializar o Hexo no alvo `<folder>`.
 
 ``` bash
 $ hexo init <folder>
@@ -8,7 +8,7 @@ $ cd <folder>
 $ npm install
 ```
 
-Após inicializado, o diretório do seu projeto ficará com a seguinte estrutura:
+Uma vez inicializado, aqui está o aspecto da sua pasta de projeto:
 
 ``` plain
 .
@@ -23,11 +23,11 @@ Após inicializado, o diretório do seu projeto ficará com a seguinte estrutura
 
 ### _config.yml
 
-Arquivo de [configuração](configuration.html) do site. Você pode definir a maioria das configurações aqui.
+Site arquivo de [configuração](configuration.html). Você pode configurar a maioria das variáveis aqui.
 
 ### package.json
 
-Arquivo de dados da aplicação. Os renderizadores [Markdown](http://daringfireball.net/projects/markdown/), [EJS](http://embeddedjs.com/) e [Stylus](http://learnboost.github.io/stylus/) são instalados por padrão. Se desejar, você pode desinstalá-los posteriormente.
+Dados do aplicativo. O [EJS](http://embeddedjs.com/), [Stylus](http://learnboost.github.io/stylus/) e [Markdown](http://daringfireball.net/projects/markdown/) são renderizadores instalados por padrão. Se desejar, você pode desinstalá-los mais tarde.
 
 ``` json package.json
 {
@@ -60,6 +60,6 @@ Pasta [Scaffold](writing.html#Scaffolds). Quando você cria uma nova postagem, a
 A pasta `source`. É aqui que você coloca o conteúdo do seu site. Hexo ignora arquivos ocultos e arquivos ou pastas cujos nomes são prefixados com `_` (underline) - exceto a pasta `_posts`. Os arquivos renderizáveis (por exemplo, Markdown, HTML) serão processados e colocados na pasta `public`, enquanto outros arquivos serão simplesmente copiados.
 
 
-### themes
+### Temas
 
-Diretório de [Temas](themes.html). O Hexo gera um site estático combinando o conteúdo do site com o tema.
+A pasta [Theme](themes.html). O Hexo gera um site estático combinando os conteúdos do site com o tema.

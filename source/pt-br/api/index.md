@@ -1,12 +1,12 @@
 title: API
 ---
-Essa documentação fornece informações mais detalhadas sobre a API e será útil para pessoas que desejam modificar o código-fonte do Hexo ou escrever novos plugins. Se você está interessado em um uso mais basico do Hexo, consulte as [documentações](../docs).
+This documentation provides more detailed information about the API and will be particularly helpful for people who want to modify the Hexo source code or write new plugins. If you are interested in more basic usage of Hexo, please refer to the [docs](../docs) instead.
 
-Por favor, note que essa documentação é válida apenas para o Hexo 3 ou superior.
+Please note that this documentation is only valid for Hexo 3 and above.
 
-## Iniciando
+## Initialize
 
-Primeiro, temos que criar uma instancia do Hexo. Uma nova instancia recebe dois argumentos: o diretório raiz do site, `base_dir`, e um objeto com a opções de inicialização. Em seguida, inicializamos essa instância chamando o método `init`, que irá carregar as configurações e plugins do Hexo.
+First, we have to create a Hexo instance. A new instance takes two arguments: the root directory of the website, `base_dir`, and an object containing the initialization options. Next, we initialize this instance by calling the `init` method on it, which will then cause Hexo to load its configuration and plugins.
 
 ``` js
 var Hexo = require('hexo');
@@ -17,18 +17,18 @@ hexo.init().then(function(){
 });
 ```
 
-Opção | Descrição | Padrão
+Option | Description | Default
 --- | --- | ---
-`debug` | Habilita o modo debug. Mostra as messagens de debug no terminal e cria o arquivo `debug.log` no diretório raiz. | `false`
-`safe` | Habilita o modo seguro. Não carrega nenhum plugin. | `false`
-`silent` | Habilita o modo silencioso. Não mostra nenhuma mensagem no terminal. | `false`
-`config` | Especifica o caminho do arquivo de configuração. | `_config.yml`
+`debug` | Enable debug mode. Display debug messages in the terminal and save `debug.log` in the root directory. | `false`
+`safe` | Enable safe mode. Don't load any plugins. | `false`
+`silent` | Enable silent mode. Don't display any messages in the terminal. | `false`
+`config` | Specify the path of the configuration file. | `_config.yml`
 
-## Carregar Arquivos
+## Load Files
 
-O Hexo fornece dois métodos para carregar arquivos: `load` e `watch`. O método `load` é usado para carregador todos os arquivos da pasta `source` como também os dados do tema. O método `watch` faz a mesma coisa que o `load`, mas também observará mudanças nos arquivos continuamente..
+Hexo provides two methods for loading files: `load` and `watch`. `load` is used for loading all files in the `source` folder as well as the theme data. `watch` does the same things `load` does, but will also start watching for file changes continuously.
 
-Ambos os métodos irão carregar a lista de arquivos e passar para os processadores correspondentes. Depois de todos os arquivos terem sido processados, eles irão chamar os geradores para criar as rotas.
+Both methods will load the list of files and pass them to the corresponding processors. After all files have been processed, they will call upon the generators to create the routes.
 
 ``` js
 hexo.load().then(function(){
@@ -36,13 +36,13 @@ hexo.load().then(function(){
 });
 
 hexo.watch().then(function(){
-  // Você pode chamar hexo.unwatch() depois para parar de observar.
+  // You can call hexo.unwatch() later to stop watching.
 });
 ```
 
-## Executar comandos
+## Execute Commands
 
-Qualquer comando do console pode ser chamado explicitamente usando o método `call` na instancia do Hexo. Cada chamada recebe dois argumentos: o nome do comando do console, e um argumento de opções. Existem diferentes opções disponíveis para os diferentes comandos.
+Any console command can be called explicitly using the `call` method on the Hexo instance. Such a call takes two arguments: the name of the console command, and an options argument. Different options are available for the different console commands.
 
 ``` js
 hexo.call('generate', {}).then(function(){
@@ -50,9 +50,9 @@ hexo.call('generate', {}).then(function(){
 });
 ```
 
-## Sair
+## Exit
 
-Você deve chamar o método `exit` após a conclusão bem sucedida ou mal sucedida de um comando. Isso permite que o Hexo saia e termine coisas importantes, como salvar o banco de dados.
+You should call the `exit` method upon successful or unsuccessful completion of a console command. This allows Hexo to exit gracefully and finish up important things such as saving the database.
 
 ``` js
 hexo.call('generate').then(function(){

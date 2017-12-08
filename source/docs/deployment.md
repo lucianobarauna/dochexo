@@ -47,6 +47,7 @@ Option | Description
 `branch` | Branch name. The deployer will detect the branch automatically if you are using GitHub or GitCafe.
 `message` | Customize commit message (Default to `Site updated: {% raw %}{{ now('YYYY-MM-DD HH:mm:ss') }}{% endraw %}`)
 
+
 ## Heroku
 
 Install [hexo-deployer-heroku].
@@ -189,7 +190,7 @@ Option | Description | Default
 `remotePath` | Root directory of remote host | `/`
 `port` | Port | 22
 `privateKey` | Path to a ssh private key |
-`passphrase` | Optional passphrase for the private key |
+`passphrase` | Optional passphrase for the private key | 
 `agent` | Path to the ssh-agent socket | `$SSH_AUTH_SOCK`
 
 ## Other Methods
@@ -201,4 +202,3 @@ All generated files are saved in the `public` folder. You can copy them to where
 [hexo-deployer-rsync]: https://github.com/hexojs/hexo-deployer-rsync
 [hexo-deployer-openshift]: https://github.com/hexojs/hexo-deployer-openshift
 [hexo-deployer-ftpsync]: https://github.com/hexojs/hexo-deployer-ftpsync
-[hexo-deployer-sftp]: https://github.com/lucascaro/hexo-deployer-sftp

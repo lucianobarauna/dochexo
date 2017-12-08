@@ -1,8 +1,8 @@
-title: Renderizador
+title: Renderer
 ---
-Um renderizador é utilizado para render conteúdos.
+A renderer is used to render content.
 
-## Resumo
+## Synopsis
 
 ``` js
 hexo.extend.renderer.register(name, output, function(data, options){
@@ -10,22 +10,22 @@ hexo.extend.renderer.register(name, output, function(data, options){
 }, sync);
 ```
 
-Argumento | Descrição
+Argument | Description
 --- | ---
-`name` | Extensão do arquivo de entrada (caixa baixa, sem o `.` inicial)
-`output` | Extensão do arquivo de saída (caixa baixa, sem o `.` inicial)
-`sync` | Modo de sincronização
+`name` | Input filename extension (lower case, without leading `.`)
+`output` | Output filename extension (lower case, without leading `.`)
+`sync` | Sync mode
 
-Dois argumentos devem ser passados para a função renderer:
+Two arguments will be passed into the render function:
 
-Argumento | Descrição
+Argument | Description
 --- | ---
-`data` | Inclui dois atributos: Caminho do arquivo (`path`) e o conteúdo do arquivo (`text`). Não é necessário que `path` exista.
-`option` | Opções
+`data` | Include two attributes: file path `path` and file content `text`. `path` won't necessarily exist.
+`option` | Options
 
-## Exemplo
+## Example
 
-### Modo Assíncrono
+### Async Mode
 
 ``` js
 var stylus = require('stylus');
@@ -43,7 +43,7 @@ hexo.extend.renderer.register('styl', 'css', function(data, options){
 });
 ```
 
-### Modo Síncrono
+### Sync Mode
 
 ``` js
 var ejs = require('ejs');

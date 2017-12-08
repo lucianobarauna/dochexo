@@ -1,12 +1,11 @@
-title: Comandos
+title: Commands
 ---
 ## init
 
 ``` bash
 $ hexo init [folder]
 ```
-
-Inicializa um website. Se não existir o diretório `folder`, o Hexo irá configurar o site no diretório atual.
+Inicializa um website. Se não existir `folder`, o Hexo configurará o site no diretório atual.
 
 ## new
 
@@ -14,7 +13,7 @@ Inicializa um website. Se não existir o diretório `folder`, o Hexo irá config
 $ hexo new [layout] <title>
 ```
 
-Cria um novo artigo. Se nenhum `layout` for fornecido, o Hexo usará o `default_layout` de [_config.yml](configuration.html). Se o `title` contiver espaços, rode-o com aspas.
+Cria um novo artigo. Se nenhum `layout` for fornecido, o Hexo usará o `default_layout` do [_config.yml](configuration.html). E o `title` contiver espaços, rode-o com aspas.
 
 ## generate
 
@@ -22,11 +21,11 @@ Cria um novo artigo. Se nenhum `layout` for fornecido, o Hexo usará o `default_
 $ hexo generate
 ```
 
-Gera os arquivos estáticos.
+Gera arquivos estáticos.
 
 Opção | Descrição
 --- | ---
-`-d`, `--deploy` | Faz o deploy após os arquivos estáticos serem gerados
+`-d`, `--deploy` | Deploy após a conclusão da geração
 `-w`, `--watch` | Assiste alterações no aquivo
 
 ## publish
@@ -35,7 +34,7 @@ Opção | Descrição
 $ hexo publish [layout] <filename>
 ```
 
-Publica um rascunho.
+Publica um rascunho
 
 ## server
 
@@ -49,7 +48,7 @@ Opção | Descrição
 --- | ---
 `-p`, `--port` | Substitui a porta padrão
 `-s`, `--static` | Somente serve arquivos estáticos
-`-l`, `--log` | Ativar o logger. Substitui o formato do logger.
+`-l`, `--log` | Ativar logger. Substitui o formato do logger.
 
 ## deploy
 
@@ -57,11 +56,11 @@ Opção | Descrição
 $ hexo deploy
 ```
 
-Implanta o site.
+Implementa o site.
 
 Opção | Descrição
 --- | ---
-`-g`, `--generate` | Gerar os arquivos estáticos antes do deploy
+`-g`, `--generate` | Gerar antes do deploy
 
 ## render
 
@@ -81,7 +80,7 @@ Opção | Descrição
 $ hexo migrate <type>
 ```
 
-[Migração](migration.html) de conteúdo de outros sistemas de blog.
+[Migração](migration.html) conteúdo de outros sistemas de blog.
 
 ## clean
 
@@ -122,7 +121,8 @@ Desativa o carregamento de plugins e scripts. Tente isso se você encontrar prob
 ``` bash
 $ hexo --debug
 ```
-Registra mensagens detalhadas para o terminal e para o arquivo `debug.log`. Tente isso se você tiver algum problema com o Hexo. Se você encontrar erros, por favor [crie uma issue no GitHub](https://github.com/hexojs/hexo/issues/new).
+
+Registra mensagens detalhadas para no terminal e no arquivo  `debug.log`. Tente isso se você encontrar algum problema com o Hexo. Se você vir erros, por favor [crie uma GitHub issue](https://github.com/hexojs/hexo/issues/new).
 
 ### Modo silent
 
@@ -130,26 +130,27 @@ Registra mensagens detalhadas para o terminal e para o arquivo `debug.log`. Tent
 $ hexo --silent
 ```
 
-Silencia a saída para no terminal.
+Silencia a saída para o terminal.
 
-### Caminho do arquivo de configuração personalizado
+### Personaliza o caminho do arquivo de configuração
 
 ``` bash
 $ hexo --config custom.yml
 ```
-Usa um arquivo de configuração personalizado (em vez de `_config.yml`). Também aceita uma lista separada por vírgulas (sem espaços) de arquivos de configuração JSON ou YAML que combinará os arquivos em um único `_multiconfig.yml`.
+
+Usa um arquivo de configuração personalizado (em vez de `_config.yml`). Também aceita uma lista separada por vírgulas (sem espaços) de arquivos de configuração JSON ou YAML que serão combinados em um único arquivo `_multiconfig.yml`.
 
 ``` bash
 $ hexo --config custom.yml,custom2.json
 ```
 
-### Mostra rascunhos
+### Display drafts
 
 ``` bash
 $ hexo --draft
 ```
 
-Exibe os rascunhos (armazenados no diretório `source/_drafts`).
+Exibe os rascunhos (armazenados na pasta `source/_drafts`).
 
 ### Customizando CWD
 

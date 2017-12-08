@@ -1,18 +1,18 @@
 title: Scaffolds
 ---
-## Obter um Scaffold
+## Get a Scaffold
 
 ``` js
 hexo.scaffold.get(name);
 ```
 
-## Definir um Scaffold
+## Set a Scaffold
 
 ``` js
 hexo.scaffold.set(name, content);
 ```
 
-## Remover um Scaffold
+## Remove a Scaffold
 
 ``` js
 hexo.scaffold.remove(name);

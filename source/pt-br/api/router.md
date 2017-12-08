@@ -1,10 +1,10 @@
 title: Router
 ---
-O router salva todos os caminhos usados no site.
+The router saves all paths used in the site.
 
-## Obter um Caminho
+## Get a Path
 
-O método `get` retorna uma [Stream]. Por exemplo, para salvar os dados do caminho para um destino especificado:
+The `get` method returns a [Stream]. For example, to save the path data to a specified destination:
 
 ``` js
 var data = hexo.route.get('index.html');
@@ -13,9 +13,9 @@ var dest = fs.createWriteStream('somewhere');
 data.pipe(dest);
 ```
 
-## Definir um Caminho
+## Set a Path
 
-O método `set` recebe uma string, um [Buffer] ou uma função.
+The `set` method takes a string, a [Buffer] or a function.
 
 ``` js
 // String
@@ -37,7 +37,7 @@ hexo.route.set('index.html', function(callback){
 });
 ```
 
-Você também pode definir um booleano para indicar se o caminho foi modificado ou não. Isso pode acelerar a geração de arquivos, pois permite ignorar os arquivos não modificados.
+You can also set a boolean for whether a path has been modified or not. This can speed up file generation as it allows for ignoring the unmodified files.
 
 ``` js
 hexo.route.set('index.html', {
@@ -48,21 +48,21 @@ hexo.route.set('index.html', {
 // hexo.route.isModified('index.html') => false
 ```
 
-## Remover um Caminho
+## Remove a Path
 
 ``` js
 hexo.route.remove('index.html');
 ```
 
-## Obter a Lista de Rotas
+## Get the List of Routes
 
 ``` js
 hexo.route.list();
 ```
 
-## Formatar o Caminho
+## Format a Path
 
-O método `format` transforma uma string em um caminho válido.
+The `format` method transforms a string to a valid path.
 
 ``` js
 hexo.route.format('archives/');

@@ -1,8 +1,8 @@
 title: Tag
 ---
-Uma tag permite que os usuários insiram, de forma rápida e fácil, snippets dentro de suas postagens.
+A tag allows users to quickly and easily insert snippets into their posts.
 
-## Resumo
+## Synopsis
 
 ``` js
 hexo.extend.tag.register(name, function(args, content){
@@ -10,25 +10,25 @@ hexo.extend.tag.register(name, function(args, content){
 }, options);
 ```
 
-Dois argumentos serão passados para dentro da função: `args` e `content`. `args` contém os argumentos passados o plugin tag e `content` é o conteúdo envolvido do plugin tag.
+Two arguments will be passed into the tag function: `args` and `content`. `args` contains the arguments passed into the tag plugin and `content` is the wrapped content from the tag plugin.
 
-Desde a introdução da rederização assíncrona, na versão 3 do Hexo, estamos usando o [Nunjucks] para renderização. O comportamento pode ser um pouco diferente do [Swig].
+Since the introduction of asynchronous rendering in Hexo 3, we are using [Nunjucks] for rendering. The behavior may be somewhat different from that in [Swig].
 
-## ## Opções
+## Options
 
 ### ends
 
-Use tags end. Esta opção é `false` por padrão.
+Use end tags. This option is `false` by default.
 
 ### async
 
-Habilita o modo assíncrono. Esta opção é `false` por padrão.
+Enable async mode. This option is `false` by default.
 
-## Exemplos
+## Examples
 
-### Sem a Tag End
+### Without End Tags
 
-Insira um vídeo do Youtube.
+Insert a Youtube video.
 
 ``` js
 hexo.extend.tag.register('youtube', function(args){
@@ -37,9 +37,9 @@ hexo.extend.tag.register('youtube', function(args){
 });
 ```
 
-### Com a Tag End
+### With End Tags
 
-Insira uma citação.
+Insert a pull quote.
 
 ``` js
 hexo.extend.tag.register('pullquote', function(args, content){
@@ -48,9 +48,9 @@ hexo.extend.tag.register('pullquote', function(args, content){
 }, {ends: true});
 ```
 
-### Renderização Assíncrona
+### Async Rendering
 
-Insira um arquivo.
+Insert a file.
 
 ``` js
 var fs = require('hexo-fs');

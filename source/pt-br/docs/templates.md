@@ -5,12 +5,12 @@ Os templates definem a apresentação do seu site, descrevendo o que cada págin
 
 Template | Página | Fallback
 --- | --- | ---
-`index` | Home page |
-`post` | Posts | `index`
+`index` | Home |
+`post` | Publicações | `index`
 `page` | Páginas | `index`
-`archive` | Archives | `index`
-`category` | Categoria archives | `archive`
-`tag` | Tag archives | `archive`
+`archive` | Arquivos | `index`
+`category` | Categorias | `archive`
+`tag` | Tags | `archive`
 
 ## Layouts
 

@@ -42,9 +42,9 @@ Primeiro, instale o plugin `hexo-migrator-wordpress`.
 $ npm install hexo-migrator-wordpress --save
 ```
 
-Exporte o seu site WordPress indo para ""Ferramentas" → "Exportar" → "WordPress" no painel do WordPress (veja a [página de suporte do WordPress](http://en.support.wordpress.com/export/) fpara mais detalhes).
+Exporte o seu site WordPress info para ""Ferramentas" → "Exportar" → "WordPress" no painel do WordPress (veja a [página de suporte do WordPress](http://en.support.wordpress.com/export/) para mais detalhes).
 
-Agora rode:
+Agora execute:
 
 ``` bash
 $ hexo migrate wordpress <source>
@@ -62,7 +62,7 @@ $ npm install hexo-migrator-joomla --save
 
 Exporte seus artigos Joomla usando o [J2XML](http://extensions.joomla.org/extensions/migration-a-conversion/data-import-a-export/12816?qh=YToxOntpOjA7czo1OiJqMnhtbCI7fQ%3D%3D) component.
 
-Agora rode:
+Agora execute:
 
 ```bash
 $ hexo migrate joomla <source>

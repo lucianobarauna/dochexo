@@ -115,7 +115,7 @@ array.map(callback[, thisArg])
 array.map(callback[, thisArg])
 {% endcodeblock %}
 
-**Adicionando uma legenda ao código e URL**
+**Adicionando uma legenda ao código, e uma url**
 
 ```
 {% codeblock _.compact http://underscorejs.org/#compact Underscore.js %}

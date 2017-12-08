@@ -23,7 +23,7 @@ Uma vez inicializado, aqui está o aspecto da sua pasta de projeto:
 
 ### _config.yml
 
-Site [configuração](configuration.html) arquivo. Você pode configurar a maioria das configurações aqui.
+Site arquivo de [configuração](configuration.html). Você pode configurar a maioria das variáveis aqui.
 
 ### package.json
 
@@ -53,7 +53,7 @@ Dados do aplicativo. O [EJS](http://embeddedjs.com/), [Stylus](http://learnboost
 
 ### scaffolds
 
-[Scaffold](writing.html#Scaffolds) pasta. Quando você cria uma nova postagem, a Hexo baseia o novo arquivo no scaffold.
+Pasta [Scaffold](writing.html#Scaffolds). Quando você cria uma nova postagem, a Hexo se baseia nos arquivos da pasta Scaffold.
 
 ### source
 

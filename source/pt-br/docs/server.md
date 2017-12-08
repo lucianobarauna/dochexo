@@ -7,7 +7,7 @@ Com o lançamento do Hexo 3, o servidor foi separado do módulo principal. Para 
 ``` bash
 $ npm install hexo-server --save
 ```
-Uma vez instalado o servidor, execute o seguinte comando para iniciar o servidor. Seu site será executado em `http: // localhost: 4000` por padrão. Quando o servidor está sendo executado, o Hexo procurará alterações de arquivos e será atualizado automaticamente, por isso não é necessário reiniciar manualmente o servidor.
+Uma vez instalado o servidor, execute o seguinte comando para iniciar o servidor. Seu site será executado em `http: // localhost: 4000` por padrão. Quando o servidor estiver sendo executado, o Hexo assistirá por alterações nos arquivos do projeto e atualzará automaticamente a página, por isso não é necessário reiniciar manualmente o servidor.
 
 ``` bash
 $ hexo server
@@ -21,7 +21,7 @@ $ hexo server -p 5000
 
 ### Modo estático
 
-No modo estático, somente arquivos na pasta `public` serão atendidos e a exibição de arquivos será desativada. Você deve executar `hexo generate` antes de iniciar o servidor. Geralmente usado na produção.
+No modo estático, somente arquivos na pasta `public` serão servidos e nenhum arquivo será assistido por mudanças. Você deve executar `hexo generate` antes de iniciar o servidor. Geralmente usado em produção.
 
 ``` bash
 $ hexo server -s
@@ -37,7 +37,7 @@ $ hexo server -i 192.168.1.1
 
 ## Pow
 
-[Pow] é um servidor de rack zero-config para Mac.
+[Pow] é um servidor de Rack zero-config para Mac.
 
 ### Instalando
 
@@ -54,7 +54,7 @@ $ cd ~/.pow
 $ ln -s /path/to/myapp
 ```
 
-Seu site estará funcionando em `http: // myapp.dev`. O URL é baseado no nome do link simbólico
+Seu site estará funcionando em `http://myapp.dev`. O URL é baseado no nome do link simbólico
 
 [hexo-server]: https://github.com/hexojs/hexo-server
 [Pow]: http://pow.cx/

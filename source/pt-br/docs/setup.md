@@ -53,11 +53,12 @@ Arquivo de dados da aplicação. Os renderizadores [Markdown](http://daringfireb
 
 ### scaffolds
 
-Diretório de [Scaffold](writing.html#Scaffolds). Quando você cria uma nova postagem, o Hexo cria um arquivo baseado no scaffold.
+Pasta [Scaffold](writing.html#Scaffolds). Quando você cria uma nova postagem, a Hexo se baseia nos arquivos da pasta Scaffold.
 
 ### source
 
-Diretório de conteúdo. É aqui que você coloca o conteúdo do seu site. O Hexo ignora arquivos ocultos e arquivos ou diretórios cujos nomes são prefixados com `_` (sublinhado) - exceto o diretório `_posts`. Os arquivos renderizáveis (arquivos Markdown e HTML por exemplo) serão processados e colocados no diretório `public`, enquanto outros arquivos serão simplesmente copiados.
+A pasta `source`. É aqui que você coloca o conteúdo do seu site. Hexo ignora arquivos ocultos e arquivos ou pastas cujos nomes são prefixados com `_` (underline) - exceto a pasta `_posts`. Os arquivos renderizáveis (por exemplo, Markdown, HTML) serão processados e colocados na pasta `public`, enquanto outros arquivos serão simplesmente copiados.
+
 
 ### themes
 

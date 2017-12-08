@@ -47,7 +47,7 @@ Inicia um servidor local. Por padrão, o local é `http://localhost:4000/`.
 
 Opção | Descrição
 --- | ---
-`-p`, `--port` | Substituir a porta padrão
+`-p`, `--port` | Substitui a porta padrão
 `-s`, `--static` | Somente serve arquivos estáticos
 `-l`, `--log` | Ativar o logger. Substitui o formato do logger.
 
@@ -122,7 +122,6 @@ Desativa o carregamento de plugins e scripts. Tente isso se você encontrar prob
 ``` bash
 $ hexo --debug
 ```
-
 Registra mensagens detalhadas para o terminal e para o arquivo `debug.log`. Tente isso se você tiver algum problema com o Hexo. Se você encontrar erros, por favor [crie uma issue no GitHub](https://github.com/hexojs/hexo/issues/new).
 
 ### Modo silent
@@ -138,7 +137,6 @@ Silencia a saída para no terminal.
 ``` bash
 $ hexo --config custom.yml
 ```
-
 Usa um arquivo de configuração personalizado (em vez de `_config.yml`). Também aceita uma lista separada por vírgulas (sem espaços) de arquivos de configuração JSON ou YAML que combinará os arquivos em um único `_multiconfig.yml`.
 
 ``` bash

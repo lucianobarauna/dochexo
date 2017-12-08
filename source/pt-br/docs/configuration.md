@@ -45,13 +45,13 @@ Configuração | Descrição | Padrão
 --- | --- | ---
 `new_post_name` | O formato do nome do arquivo para novas postagens | `:title.md`
 `default_layout` | Layout padrão | `post`
-`titlecase` | Transformar títulos em maiúsculo? | `false`
-`external_link` | Abrir links externos em uma nova aba? | `true`
+`titlecase` | Transformar títulos em maiúsculo | `false`
+`external_link` | Abrir links externos em uma nova aba | `true`
 `filename_case` | Converter nomes de arquivos para minúsculos `1`; maiúsculos `2` | `0`
-`render_drafts` | Exibir rascunhos? | `false`
-`post_asset_folder` | Ativar o [diretório de Asset](asset-folders.html)? | `false`
-`relative_link` | Links para o diretório raiz? | `false`
-`future` | Exibir postagens futuras? | `true`
+`render_drafts` | Exibir rascunhos | `false`
+`post_asset_folder` | Ativar o [diretório de Asset](asset-folders.html) | `false`
+`relative_link` | Links para o diretório raiz | `false`
+`future` | Exibir postagens futuras | `true`
 `highlight` | Configurações de bloco de código |
 
 ### Categoria & Tag
@@ -64,7 +64,7 @@ Configuração | Descrição | Padrão
 
 ### Formato de Data / Hora
 
-Hexo usa [Moment.js](http://momentjs.com/) para processar datas.
+Hexo usa o [Moment.js](http://momentjs.com/) para processar datas.
 
 Configuração | Descrição | Padrão
 --- | --- | ---
@@ -104,7 +104,6 @@ exclude:
 ```
 
 ### Usando uma Configuração Alternativa
-
 Um arquivo de configuração personalizado pode ser especificado adicionando o sinalizador `--config` aos comandos do `hexo` com o caminho para o arquivo alternativo de configuração YAML ou JSON, ou até mesmo uma lista separada por vírgulas (sem espaços) de múltiplos arquivos YAML ou JSON.
 
 ``` bash
@@ -114,7 +113,7 @@ $ hexo server --config custom.yml
 # usando 'custom.yml' e 'custom2.json', priorizando 'custom2.json'
 $ hexo server --config custom.yml,custom2.json
 ```
-
-O uso de vários arquivos combina todos os arquivos de configuração e salva as configurações mescladas para `_multiconfig.yml`. Os valores posteriores prevalecem. Este recurso funciona com qualquer quantidade de arquivos JSON e YAML com objetos arbitrariamente profundos. Observe que **nenhum espaço é permitido na lista**.
+O uso de vários arquivos combina todos os arquivos de configuração e salva as configurações mescladas para `_multiconfig.yml`. 
+Os valores posteriores prevalecem. Este recurso funciona com qualquer quantidade de arquivos JSON e YAML com objetos arbitrariamente profundos. Observe que **nenhum espaço é permitido na lista**.
 
 Por exemplo, no exemplo acima se `foo: bar` estiver em `custom.yml`, mas `"foo": "dinosaur"` estiver em `custom2.json`, `_multiconfig.yml` irá conter `foo: dinosaur`.

@@ -28,6 +28,7 @@ Por padrão, o Hexo usa o título da postagem como seu nome de arquivo. Você po
 
 Placeholder | Descrição
 --- | ---
+
 `:title` | Título do post (minúsculas, com espaços substituídos por hifens)
 `:year` | Ano de criação, ex: `2015`
 `:month` | Mês de criação (com zero à esquerda), ex: `04`

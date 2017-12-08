@@ -1,99 +1,99 @@
-title: Configuration
+title: Configuração
 ---
-You can modify site settings in `_config.yml` or in an [alternate config file](#Using-an-Alternate-Config).
-
+Você pode modificar as configurações do site em `_config.yml` ou em um [arquivo de configuração alternativo](#Using-an-Alternate-Config).
 ### Site
 
-Setting | Description
+Configuração | Descriçao
 --- | ---
-`title` | The title of your website
-`subtitle` | The subtitle of your website
-`description` | The description of your website
-`author` | Your name
-`language` | The language of your website. Use a [2-lettter ISO-639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). Default is `en`.
-`timezone` | The timezone of your website. Hexo uses the setting on your computer by default. You can find the list of available timezones [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). Some examples are `America/New_York`, `Japan`, and `UTC`.
+`title` | O título do seu site
+`subtitle` | O subtítulo do seu site
+`description` | A descrição do seu site
+`author` | Seu nome
+`language` | O idioma do seu site. Use a [2-lettter ISO-639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). Padrão é `en`.
+`timezone` | O fuso horário do seu site. O Hexo usa a configuração em seu computador por padrão. Você pode encontrar a lista de fuso horário disponível [aqui](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). Alguns exemplos são `America/New_York`, `Japan`, e `UTC`.
 
 ### URL
 
-Setting | Description | Default
+Configuração | Descriçao | Padrão
 --- | --- | ---
-`url` | The URL of your website |
-`root` | The root directory of your website |
-`permalink` | The [permalink](permalinks.html) format of articles | `:year/:month/:day/:title/`
-`permalink_defaults` | Default values of each segment in permalink |
+`url` | A URL do seu site |
+`root` | O diretório raiz do seu site |
+`permalink` | O [permalink](permalinks.html) é o formato de artigos | `:year/:month/:day/:title/`
+`permalink_defaults` | Valores padrão de cada segmento no permalink |
 
 {% note info Website in subdirectory %}
-If your website is in a subdirectory (such as `http://example.org/blog`) set `url` to `http://example.org/blog` and set `root` to `/blog/`.
+Se o seu site estiver em um subdiretório (tal como `http://example.org/blog`) configure `url` em `http://example.org/blog` e configure `root` para `/blog/`.
 {% endnote %}
 
-### Directory
+### Diretório
 
-Setting | Description | Default
+Configuração | Descriçao | Padrão
 --- | --- | ---
-`source_dir` | Source folder. Where your content is stored | `source`
-`public_dir` | Public folder. Where the static site will be generated | `public`
-`tag_dir` | Tag directory | `tags`
-`archive_dir` | Archive directory | `archives`
-`category_dir` | Category directory | `categories`
-`code_dir` | Include code directory | `downloads/code`
-`i18n_dir` | i18n directory | `:lang`
-`skip_render` | Paths not to be rendered. You can use [glob expressions](https://github.com/isaacs/minimatch) for path matching |
+`source_dir` |  Pasta de origem. Onde seu conteúdo está armazenado | `source`
+`public_dir` | Pasta pública. Onde o site estático será gerado | `public`
+`tag_dir` | Diretório de tags | `tags`
+`archive_dir` | Diretório de arquivo | `archives`
+`category_dir` | Diretório de categorias | `categories`
+`code_dir` | Incluir diretório de código | `downloads/code`
+`i18n_dir` | Diretório i18n  | `:lang`
+`skip_render` | Caminhos que não devem ser renderizados. Você pode usar [expressões glob](https://github.com/isaacs/minimatch) para fazer correspondência de caminho |
 
-### Writing
+### Escrevendo
 
-Setting | Description | Default
+Configuração | Descriçao | Padrão
 --- | --- | ---
-`new_post_name` | The filename format for new posts | `:title.md`
-`default_layout` | Default layout | `post`
-`titlecase` | Transform titles into title case? | `false`
-`external_link` | Open external links in new tab? | `true`
-`filename_case` | Transform filenames to `1` lower case; `2` upper case | `0`
-`render_drafts` | Display drafts? | `false`
-`post_asset_folder` | Enable the [Asset Folder](asset-folders.html)? | `false`
-`relative_link` | Make links relative to the root folder? | `false`
-`future` | Display future posts? | `true`
-`highlight` | Code block settings |
+`new_post_name` | O formato do nome do arquivo para novas postagens | `:title.md`
+`default_layout` | Layout padrão | `post`
+`titlecase` | Transformar títulos em "title case" | `false`
+`external_link` | Abrir links externos na nova guia? | `true`
+`filename_case` | Transforme nomes de arquivos para `1` minúsculas; `2` maiúscula | `0`
+`render_drafts` | Exibir rascunhos? | `false`
+`post_asset_folder` | Ativar a [pasta asset](asset-folders.html)? | `false`
+`relative_link` | Fazer os links relativos a pasta raiz? | `false`
+`future` | Exibir postagens futuras? | `true`
+`highlight` | Configurações de bloco de código |
 
 ### Category & Tag
 
-Setting | Description | Default
+Configuração | Descriçao | Padrão
 --- | --- | ---
-`default_category` | Default category | `uncategorized`
-`category_map` | Category slugs |
+`default_category` | Categoria padrão | `uncategorized`
+`category_map` | Categoria slugs |
 `tag_map` | Tag slugs |
 
-### Date / Time format
+### Data / Formato de hora
 
-Hexo uses [Moment.js](http://momentjs.com/) to process dates.
+Hexo usa o [Moment.js](http://momentjs.com/) para processar datas.
 
-Setting | Description | Default
+Configuração | Descriçao | Padrão
 --- | --- | ---
-`date_format` | Date format | `YYYY-MM-DD`
-`time_format` | Time format | `HH:mm:ss`
+`date_format` | Formato de data | `YYYY-MM-DD`
+`time_format` | Formado de hora | `HH:mm:ss`
 
-### Pagination
+### Paginação
 
-Setting | Description | Default
+Configuração | Descriçao | Padrão
 --- | --- | ---
-`per_page` | The amount of the posts displayed on a single page. `0` disables pagination | `10`
+`per_page` | A quantidade de postagens exibidas em uma única página. `0` desabilita paginação | `10`
 `pagination_dir` | Pagination directory | `page`
 
-### Extensions
+### Extensões
 
-Setting | Description
+Configuração | Descrição
 --- | ---
-`theme` | Theme name. `false` disables theming
-`deploy` | Deployment setting
+`theme` | Nome do tema. `false` desabilita o tema
+`deploy` | Configuração de implantação
 
 
-### Include/Exclude Files or Folders
+### Incluir / Excluir arquivos ou pastas
 
-In the config file, set the include/exlude key to make hexo explicitly process or ignore certain files/folders.
+No arquivo de configuração, defina a chave de include/exlude para que o hexo processe ou ignore explicitamente determinados arquivos / pastas.
 
-Setting | Description
+Configuração | Descriçao
 --- | ---
-`include` | Hexo defaultly ignore hidden files and folders, but set this field will make Hexo process them
-`exclude` | Hexo process will ignore files list under this field
+`include` | Hexo ignora os arquivos e pastas ocultos, mas configurar este campo fará com que o Hexo os processe também
+`exclude` | O Hexo ignorará a lista de arquivos abaixo deste campo
+
 
 Sample:
 ```yaml
@@ -104,9 +104,8 @@ exclude:
   - .DS_Store
 ```
 
-### Using an Alternate Config
-
-A custom config file path can be specified by adding the `--config` flag to your `hexo` commands with a path to an alternate YAML or JSON config file, or a comma-separated list (no spaces) of multiple YAML or JSON files.
+### Usango outras alternativas de configuração
+Um caminho de arquivo de configuração personalizado pode ser especificado adicionando o sinalizador `--config` aos comandos `hexo` com um caminho para um arquivo de configuração YAML ou JSON alternativo ou uma lista separada por vírgulas (sem espaços) de múltiplos YAMLs ou arquivos JSON.
 
 ``` bash
 # use 'custom.yml' in place of '_config.yml'
@@ -116,7 +115,8 @@ $ hexo server --config custom.yml
 $ hexo server --config custom.yml,custom2.json
 ```
 
-Using multiple files combines all the config files and saves the merged settings to `_multiconfig.yml`. The later values take precedence. It works with any number of JSON and YAML files with arbitrarily deep objects. Note that **no spaces are allowed in the list**.
+Ao usar multiplos arquivos de configuração, todos serão mesclados em um único arquivo  `_multiconfig.yml`.
 
-For instance, in the above example if `foo: bar` is in `custom.yml`, but `"foo": "dinosaur"` is in `custom2.json`, `_multiconfig.yml` will contain `foo: dinosaur`.
+Os valores que aparecerem por último sobrescrevem os primeiros. Ele funciona com qualquer número de arquivos JSON e YAML com objetos arbitrariamente profundos. Observe que **espaços não são permitidos entre os nomes dos arquivos**.
 
+No exemplo acima se `foo: bar` estiver em `custom.yml`, mas `"foo": "dinosaur"` está em `custom2.json`, `_multiconfig.yml` conterá `foo: dinosaur`.

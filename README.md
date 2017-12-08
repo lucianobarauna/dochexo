@@ -6,7 +6,7 @@ No site do Hexo, você pode ver os arquivos gerados em [hexojs/hexojs.github.io]
 
 ## Começando
 
-Instalando dependências:
+-Instalando dependências:
 
 ``` bash
 $ git clone https://github.com/hexojs/site.git
@@ -20,7 +20,7 @@ Gerando:
 $ hexo generate
 ```
 
-Iniciando servidor:
+-Iniciando servidor:
 
 ``` bash
 $ hexo server
@@ -41,3 +41,4 @@ $ hexo server
 
 [tommy351]: https://github.com/tommy351
 [pinggod]: https://github.com/pinggod
+

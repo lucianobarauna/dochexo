@@ -1,25 +1,25 @@
 'use strict';
 
-var gulp = require('gulp');
-var gulpIf = require('gulp-if');
-var gulpRev = require('gulp-rev');
-var gulpRevCollector = require('gulp-rev-collector');
-var gulpRevReplace = require('gulp-rev-replace');
-var gulpUglify = require('gulp-uglify');
-var gulpUniqueFiles = require('gulp-unique-files');
-var gulpUseRef = require('gulp-useref');
-var gulpCleanCSS = require('gulp-clean-css');
-var gulpResponsive = require('gulp-responsive');
-var gulpCheerio = require('gulp-cheerio');
-var del = require('del');
-var rename = require('rename');
+var gulp = require('gulp'),
+    gulpIf = require('gulp-if'),
+    gulpRev = require('gulp-rev'),
+    gulpRevCollector = require('gulp-rev-collector'),
+    gulpRevReplace = require('gulp-rev-replace'),
+    gulpUglify = require('gulp-uglify'),
+    gulpUniqueFiles = require('gulp-unique-files'),
+    gulpUseRef = require('gulp-useref'),
+    gulpCleanCSS = require('gulp-clean-css'),
+    gulpResponsive = require('gulp-responsive'),
+    gulpCheerio = require('gulp-cheerio'),
+    del = require('del'),
+    rename = require('rename'),
 
-var dirs = {
+    dirs = {
   public: 'public',
   screenshots: 'public/build/screenshots'
 };
 
-gulp.task('useref', ['screenshot'], function() {
+gulp.task('useref', ['screenshot'], () => {
   var assets = gulpUseRef.assets({
     searchPath: 'public'
   });
@@ -38,11 +38,11 @@ gulp.task('useref', ['screenshot'], function() {
     .pipe(gulp.dest('public'));
 });
 
-gulp.task('screenshot:clean', function() {
+gulp.task('screenshot:clean', () => 
   return del([dirs.screenshots + '/**/*']);
-});
+);
 
-gulp.task('screenshot:rev', ['screenshot:clean'], function() {
+gulp.task('screenshot:rev', ['screenshot:clean'], () => {
   return gulp.src('public/themes/screenshots/*.png')
     .pipe(gulpRev())
     .pipe(gulp.dest(dirs.screenshots))
@@ -50,7 +50,7 @@ gulp.task('screenshot:rev', ['screenshot:clean'], function() {
     .pipe(gulp.dest(dirs.screenshots));
 });
 
-gulp.task('screenshot:revreplace', ['screenshot:rev'], function() {
+gulp.task('screenshot:revreplace', ['screenshot:rev'], () => {
   var destDir = '/build/screenshots';
 
   return gulp.src([dirs.screenshots + '/rev-manifest.json', 'public/themes/index.html'])
@@ -60,15 +60,15 @@ gulp.task('screenshot:revreplace', ['screenshot:rev'], function() {
         '/themes/screenshots': destDir
       }
     }))
-    .pipe(gulpCheerio(function($, file) {
-      $('img.plugin-screenshot-img.lazyload').each(function() {
-        var img = $(this);
-        var src = img.attr('data-src') || img.attr('data-org');
+    .pipe(gulpCheerio(($, file) => {
+      $('img.plugin-screenshot-img.lazyload').each(() => {
+        var img = $(this),
+            src = img.attr('data-src') || img.attr('data-org');
         if (!src) return;
 
-        var jpgPath = replaceBackSlash(rename(src, {extname: '.jpg'}));
-        var jpg2xPath = replaceBackSlash(rename(jpgPath, {suffix: '@2x'}));
-        var srcset = [
+        var jpgPath = replaceBackSlash(rename(src, {extname: '.jpg'})),
+            jpg2xPath = replaceBackSlash(rename(jpgPath, {suffix: '@2x'})),
+            srcset = [
           jpgPath,
           jpg2xPath + ' 2x'
         ].join(', ');
@@ -81,7 +81,7 @@ gulp.task('screenshot:revreplace', ['screenshot:rev'], function() {
     .pipe(gulp.dest('public/themes'));
 });
 
-gulp.task('screenshot:resize', ['screenshot:rev'], function() {
+gulp.task('screenshot:resize', ['screenshot:rev'], () =>{
   return gulp.src(dirs.screenshots + '/*.png')
     .pipe(gulpResponsive({
       '*.png': [

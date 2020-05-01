@@ -1,3 +1,4 @@
+---
 title: Setup
 ---
 
@@ -30,7 +31,7 @@ Arquivo de [configuração](configuration.html) do site. Você pode definir a ma
 
 ### package.json
 
-Arquivo de dados da aplicação. Os renderizadores [Markdown](http://daringfireball.net/projects/markdown/), [EJS](http://embeddedjs.com/) e [Stylus](http://learnboost.github.io/stylus/) são instalados por padrão. Se desejar, você pode desinstalá-los posteriormente.
+Arquivo de dados da aplicação. Os renderizadores [Markdown](http://daringfireball.net/projects/markdown/), [EJS](https://ejs.co/) e [Stylus](http://learnboost.github.io/stylus/) são instalados por padrão. Se desejar, você pode desinstalá-los posteriormente.
 
 ``` json package.json
 {
@@ -41,15 +42,15 @@ Arquivo de dados da aplicação. Os renderizadores [Markdown](http://daringfireb
     "version": ""
   },
   "dependencies": {
-    "hexo": "^3.0.0",
-    "hexo-generator-archive": "^0.1.0",
-    "hexo-generator-category": "^0.1.0",
-    "hexo-generator-index": "^0.1.0",
-    "hexo-generator-tag": "^0.1.0",
-    "hexo-renderer-ejs": "^0.1.0",
-    "hexo-renderer-stylus": "^0.2.0",
-    "hexo-renderer-marked": "^0.2.4",
-    "hexo-server": "^0.1.2"
+    "hexo": "^3.8.0",
+    "hexo-generator-archive": "^0.1.5",
+    "hexo-generator-category": "^0.1.3",
+    "hexo-generator-index": "^0.2.1",
+    "hexo-generator-tag": "^0.2.0",
+    "hexo-renderer-ejs": "^0.3.1",
+    "hexo-renderer-stylus": "^0.3.3",
+    "hexo-renderer-marked": "^0.3.2",
+    "hexo-server": "^0.3.3"
   }
 }
 ```

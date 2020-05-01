@@ -1,3 +1,4 @@
+---
 title: 模版
 ---
 模板決定了網站內容的呈現方式，每個主題至少都應包含一個 `index` 模板，以下是各頁面相對應的模板名稱：
@@ -97,4 +98,7 @@ index
 <%- partial('header', {}, {cache: true});
 ```
 
-但是，如果您開啟了 `relative_link` 設定的話，請勿使用局部快取功能，因為相對連結在每個頁面可能不同。
+{% note warn %}
+`fragment_cache()` will cache the rendered result and output the cached result to other pages. This should only be used on partials that are expected **not** to change across different pages. Otherwise, it should **not** be enabled.
+For example, it should be disabled when `relative_link` is enabled in the config. This is because relative links may appear differently across pages.
+{% endnote %}

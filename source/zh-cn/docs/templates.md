@@ -1,8 +1,9 @@
+---
 title: 模版
 ---
 模板决定了网站内容的呈现方式，每个主题至少都应包含一个 `index` 模板，以下是各页面相对应的模板名称：
 
-模板 | 用途 | 回调
+模板 | 用途 | 回退
 --- | --- | ---
 `index` | 首页 |
 `post` | 文章 | `index`
@@ -62,7 +63,7 @@ index
 您可以在局部模板中指定局部变量并使用。
 
 ``` html partial/header.ejs
-<h1 id="logo"><%= title></h1>
+<h1 id="logo"><%= title %></h1>
 ```
 
 ``` html index.ejs
@@ -97,4 +98,7 @@ index
 <%- partial('header', {}, {cache: true});
 ```
 
-但是，如果您开启了 `relative_link` 参数的话，请勿使用局部缓存功能，因为相对链接在每个页面可能不同。
+{% note warn %}
+`fragment_cache()` 将会缓存第一次的渲染结果，并在之后直接输出缓存的结果。因此只有在不同页面的渲染结果都相同时才应使用局部缓存。
+比如，在配置中启用了 `relative_link` 后不应该使用局部缓存，因为相对链接在每个页面可能不同。
+{% endnote %}

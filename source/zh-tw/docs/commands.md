@@ -1,5 +1,8 @@
 title: 指令
 ---
+
+{% youtube mgdXi5npArQ %}
+
 ## init
 
 ``` bash

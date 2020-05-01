@@ -1,5 +1,9 @@
+---
 title: 建站
 ---
+
+{% youtube xvIRGmKWpFM %}
+
 
 安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。
 
@@ -28,7 +32,7 @@ $ npm install
 
 ### package.json
 
-应用程序的信息。[EJS](http://embeddedjs.com/), [Stylus](http://learnboost.github.io/stylus/) 和 [Markdown](http://daringfireball.net/projects/markdown/) renderer 已默认安装，您可以自由移除。
+应用程序的信息。[EJS](https://ejs.co/), [Stylus](http://learnboost.github.io/stylus/) 和 [Markdown](http://daringfireball.net/projects/markdown/) renderer 已默认安装，您可以自由移除。
 
 ``` json package.json
 {
@@ -39,15 +43,15 @@ $ npm install
     "version": ""
   },
   "dependencies": {
-    "hexo": "^3.0.0",
-    "hexo-generator-archive": "^0.1.0",
-    "hexo-generator-category": "^0.1.0",
-    "hexo-generator-index": "^0.1.0",
-    "hexo-generator-tag": "^0.1.0",
-    "hexo-renderer-ejs": "^0.1.0",
-    "hexo-renderer-stylus": "^0.2.0",
-    "hexo-renderer-marked": "^0.2.4",
-    "hexo-server": "^0.1.2"
+    "hexo": "^3.8.0",
+    "hexo-generator-archive": "^0.1.5",
+    "hexo-generator-category": "^0.1.3",
+    "hexo-generator-index": "^0.2.1",
+    "hexo-generator-tag": "^0.2.0",
+    "hexo-renderer-ejs": "^0.3.1",
+    "hexo-renderer-stylus": "^0.3.3",
+    "hexo-renderer-marked": "^0.3.2",
+    "hexo-server": "^0.3.3"
   }
 }
 ```
@@ -56,7 +60,7 @@ $ npm install
 
 [模版](writing.html) 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。
 
-Hexo的模板是指在新建的markdown文件中默认填充的内容。例如，如果您修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。
+Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果您修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。
 
 ### source
 

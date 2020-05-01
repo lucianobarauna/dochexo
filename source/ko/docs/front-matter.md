@@ -1,9 +1,11 @@
+---
 title: Front-matter
 ---
 Front-matter는 파일 시작 시 작성하는 YAML 또는 JSON 구역입니다. 게시물에 대한 환경 설정을 이 곳에서 합니다. Front-matter가 끝나는 부분은 YAML의 경우 세 개의 대시(-) 로, JSON의 경우 세 개의 세미콜론(;)을 넣어서 구분합니다.
 
 **YAML**
 ``` yaml
+---
 title: Hello World
 date: 2013/7/13 20:46:25
 ---
@@ -21,7 +23,7 @@ date: 2013/7/13 20:46:25
 설정 | 설명 | 기본 값
 --- | --- | ---
 `layout` | 레이아웃 |
-`title` | 타이틀 |
+`title` | 타이틀 | Filename (posts only)
 `date` | 발행일 | 파일이 생성된 날짜
 `updated` | 갱신일 | 파일이 업로드된 날짜
 `comments` | 포스트에서 comment 기능을 사용할지 여부 | true

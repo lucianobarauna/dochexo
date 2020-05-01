@@ -1,5 +1,9 @@
+---
 title: 建立
 ---
+
+{% youtube xvIRGmKWpFM %}
+
 一旦 Hexo 完成後，請執行下列指令，Hexo 會在指定資料夾中建立所有您需要的檔案。
 
 ``` bash
@@ -27,7 +31,7 @@ $ npm install
 
 ### package.json
 
-應用程式資料。[EJS](http://embeddedjs.com/), [Stylus](http://learnboost.github.io/stylus/) 和 [Markdown](http://daringfireball.net/projects/markdown/) renderer 已預設安裝，您可以稍後移除。
+應用程式資料。[EJS](https://ejs.co/), [Stylus](http://learnboost.github.io/stylus/) 和 [Markdown](http://daringfireball.net/projects/markdown/) renderer 已預設安裝，您可以稍後移除。
 
 ``` json package.json
 {
@@ -38,15 +42,15 @@ $ npm install
     "version": ""
   },
   "dependencies": {
-    "hexo": "^3.0.0",
-    "hexo-generator-archive": "^0.1.0",
-    "hexo-generator-category": "^0.1.0",
-    "hexo-generator-index": "^0.1.0",
-    "hexo-generator-tag": "^0.1.0",
-    "hexo-renderer-ejs": "^0.1.0",
-    "hexo-renderer-stylus": "^0.2.0",
-    "hexo-renderer-marked": "^0.2.4",
-    "hexo-server": "^0.1.2"
+    "hexo": "^3.8.0",
+    "hexo-generator-archive": "^0.1.5",
+    "hexo-generator-category": "^0.1.3",
+    "hexo-generator-index": "^0.2.1",
+    "hexo-generator-tag": "^0.2.0",
+    "hexo-renderer-ejs": "^0.3.1",
+    "hexo-renderer-stylus": "^0.3.3",
+    "hexo-renderer-marked": "^0.3.2",
+    "hexo-server": "^0.3.3"
   }
 }
 ```

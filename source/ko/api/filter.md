@@ -1,3 +1,4 @@
+---
 title: Filter
 ---
 Filter는 특정한 데이터를 수정할 때 사용합니다. Hexo는 데이터를 filter로 순차적으로 전달하고 filter들은 교대로 데이터를 수정할 수 있습니다. 이 컨셉은 [WordPress](http://codex.wordpress.org/Plugin_API#Filters)에서 차용하였습니다.
@@ -55,6 +56,28 @@ hexo.execFilterSync(type, data, options);
 
 ``` js
 hexo.extend.filter.unregister(type, filter);
+```
+
+**Example**
+
+``` js
+// Unregister a filter which is registered with named function
+
+const filterFn = (data) => {
+  data = 'something';
+  return data;
+};
+hexo.extend.filter.register('example', filterFn);
+
+hexo.extend.filter.unregister('example', filterFn);
+```
+
+``` js
+// Unregister a filter which is registered with commonjs module
+
+hexo.extend.filter.register('example', require('path/to/filter'));
+
+hexo.extend.filter.unregister('example', require('path/to/filter'));
 ```
 
 ## Filter 목록

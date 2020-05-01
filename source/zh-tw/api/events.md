@@ -1,3 +1,4 @@
+---
 title: 事件
 ---
 Hexo 繼承了 [EventEmitter]，您可用 `on` 方法監聽 Hexo 所發佈的事件，亦可用 `emit` 方法對 Hexo 發佈事件，更詳細的說明請參閱 Node.js 的 API。
@@ -49,4 +50,4 @@ hexo.on('new', function(post){
 
 在初始化完成後發佈。
 
-[EventEmitter]: http://nodejs.org/api/events.html
+[EventEmitter]: https://nodejs.org/dist/latest/docs/api/events.html

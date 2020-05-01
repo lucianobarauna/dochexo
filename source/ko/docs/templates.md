@@ -1,3 +1,4 @@
+---
 title: Templates
 ---
 템플릿은 당신의 웹 사이트를 외관을 어떻게 표현할지 정의합니다. 아래 표는 페이지에 따른 적절한 템플릿을 소개합니다. 테마는 최소한 `index` 템플릿은 가지고 있어야 합니다. 
@@ -97,4 +98,7 @@ Fragment caching은 header, footer, sidebar, 다른 정적인 컨텐츠를 사�
 <%- partial('header', {}, {cache: true});
 ```
 
-`relative_link`가 활성화 상태일 때에는 fragment caching을 사용하지 마세요. 사용하게 되면 이슈가 발생할 수 있습니다. 왜냐하면 상대 링크는 표시되는 페이지에 따라 다를 수도 있기 때문입니다.
+{% note warn %}
+`fragment_cache()` will cache the rendered result and output the cached result to other pages. This should only be used on partials that are expected **not** to change across different pages. Otherwise, it should **not** be enabled.
+For example, it should be disabled when `relative_link` is enabled in the config. This is because relative links may appear differently across pages.
+{% endnote %}

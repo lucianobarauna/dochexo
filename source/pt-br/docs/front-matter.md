@@ -1,3 +1,4 @@
+---
 title: Front-matter
 ---
 
@@ -7,6 +8,7 @@ Front-matter é um bloco de YAML ou JSON no início do arquivo que é usado para
 
 **YAML**
 ``` yaml
+---
 title: Hello World
 date: 2013/7/13 20:46:25
 ---
@@ -24,7 +26,7 @@ date: 2013/7/13 20:46:25
 Configuração | Descrição | Padrão
 --- | --- | ---
 `layout` | Layout |
-`title` | Título |
+`title` | Título | Filename (posts only)
 `date` | Data de publicação | Data de criação do arquivo
 `updated` | Data de atualização | Data de atualização do arquivo
 `comments` | Habilita o recurso de comentário para a postagem | true

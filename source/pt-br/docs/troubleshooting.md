@@ -1,3 +1,4 @@
+---
 title: Soluções de Problemas
 ---
 No caso de você ter problemas com o uso do Hexo, aqui está uma lista de soluções para alguns dos problemas mais frequentes. Se esta página não ajudar a resolver seu problema, tente fazer uma pesquisa no nosso [GitHub](https://github.com/hexojs/hexo/issues) ou no nosso [Google Group](https://groups.google.com/group/hexo).
@@ -177,6 +178,6 @@ plugins:
   - hexo-generator-sitemap
 ```
 
-[Warehouse]: https://github.com/tommy351/warehouse
+[Warehouse]: https://github.com/hexojs/warehouse
 [Swig]: http://paularmstrong.github.io/swig/
 [Nunjucks]: http://mozilla.github.io/nunjucks/

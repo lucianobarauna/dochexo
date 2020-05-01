@@ -1,3 +1,4 @@
+---
 title: 主題
 ---
 打造 Hexo 主題非常容易，您只要在 `themes` 資料夾內，新增一個資料夾，並修改 `_config.yml` 內的 `theme` 設定，即可切換主題。一個主題可能會有以下的結構：
@@ -73,7 +74,7 @@ Swig: layout.swig
 6. 建立一個新的合併申請（pull request）。
 
 [EJS]: https://github.com/hexojs/hexo-renderer-ejs
-[Swig]: http://paularmstrong.github.com/swig/
+[Swig]: https://github.com/node-swig/swig-templates
 [Haml]: https://github.com/hexojs/hexo-renderer-haml
 [Jade]: https://github.com/hexojs/hexo-renderer-jade
 [hexojs/site]: https://github.com/hexojs/site

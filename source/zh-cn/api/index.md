@@ -1,3 +1,4 @@
+---
 title: API
 ---
 本文件提供您更丰富的 API 信息，使您更容易修改 Hexo 源代码或编写插件。如果您只是想查询 Hexo 的基本使用方法，请参阅 [文档](../docs/)。
@@ -23,6 +24,7 @@ hexo.init().then(function(){
 `safe` | 开启安全模式。不加载任何插件。| `false`
 `silent` | 开启安静模式。不在终端中显示任何信息。| `false`
 `config` | 指定配置文件的路径。| `_config.yml`
+`draft` / `drafts`| 是否将草稿加入到文章列表中。<br>例如在 `hexo.locals.get('posts')` 中获取草稿内容 | _config.yml 中 `render_drafts` 的值
 
 ## 载入文件
 

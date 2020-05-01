@@ -1,3 +1,4 @@
+---
 title: 過濾器（Filter）
 ---
 過濾器用於修改特定資料，Hexo 將資料依序傳給過濾器，而過濾器可以針對資料進行修改，這個概念是從 [WordPress](http://codex.wordpress.org/Plugin_API#Filters) 借來的。
@@ -55,6 +56,28 @@ hexo.execFilterSync(type, data, options);
 
 ``` js
 hexo.extend.filter.unregister(type, filter);
+```
+
+**Example**
+
+``` js
+// Unregister a filter which is registered with named function
+
+const filterFn = (data) => {
+  data = 'something';
+  return data;
+};
+hexo.extend.filter.register('example', filterFn);
+
+hexo.extend.filter.unregister('example', filterFn);
+```
+
+``` js
+// Unregister a filter which is registered with commonjs module
+
+hexo.extend.filter.register('example', require('path/to/filter'));
+
+hexo.extend.filter.unregister('example', require('path/to/filter'));
 ```
 
 ## 過濾器列表

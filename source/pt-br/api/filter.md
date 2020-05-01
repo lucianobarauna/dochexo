@@ -1,3 +1,4 @@
+---
 title: Filter
 ---
 
@@ -56,6 +57,28 @@ hexo.execFilterSync(type, data, options);
 
 ``` js
 hexo.extend.filter.unregister(type, filter);
+```
+
+**Example**
+
+``` js
+// Unregister a filter which is registered with named function
+
+const filterFn = (data) => {
+  data = 'something';
+  return data;
+};
+hexo.extend.filter.register('example', filterFn);
+
+hexo.extend.filter.unregister('example', filterFn);
+```
+
+``` js
+// Unregister a filter which is registered with commonjs module
+
+hexo.extend.filter.register('example', require('path/to/filter'));
+
+hexo.extend.filter.unregister('example', require('path/to/filter'));
 ```
 
 ## Lista de Filtros
@@ -164,6 +187,16 @@ hexo.extend.filter.register('post_permalink', function(data){
 ### after_render
 
 Executado após a renderização ser terminada. Mais informações podem ser encontradas na seção de [renderização](rendering.html#Filtros-after-render).
+
+### after_clean
+
+Executados após os arquivos serem gerados e o cache ser removido com o comando `hexo clean`.
+
+``` js
+hexo.extend.filter.register('after_clean', function(){
+  // remove some other temporary files
+});
+```
 
 ### server_middleware
 
